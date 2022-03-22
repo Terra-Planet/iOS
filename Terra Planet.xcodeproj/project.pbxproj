@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5933E97827EA08C300C8D25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97727EA08C300C8D25D /* AppDelegate.swift */; };
+		5933E97A27EA08C300C8D25D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97927EA08C300C8D25D /* SceneDelegate.swift */; };
+		5933E97C27EA08C300C8D25D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97B27EA08C300C8D25D /* ViewController.swift */; };
+		5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5933E97D27EA08C300C8D25D /* Main.storyboard */; };
+		5933E98127EA08C500C8D25D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5933E98027EA08C500C8D25D /* Assets.xcassets */; };
+		5933E98427EA08C500C8D25D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5933E98227EA08C500C8D25D /* LaunchScreen.storyboard */; };
+		5933E98F27EA08C500C8D25D /* Terra_PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E98E27EA08C500C8D25D /* Terra_PlanetTests.swift */; };
+		5933E99927EA08C500C8D25D /* Terra_PlanetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E99827EA08C500C8D25D /* Terra_PlanetUITests.swift */; };
+		5933E99B27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E99A27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5933E98B27EA08C500C8D25D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5933E96C27EA08C300C8D25D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5933E97327EA08C300C8D25D;
+			remoteInfo = "Terra Planet";
+		};
+		5933E99527EA08C500C8D25D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5933E96C27EA08C300C8D25D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5933E97327EA08C300C8D25D;
+			remoteInfo = "Terra Planet";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5933E97427EA08C300C8D25D /* Terra Planet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra Planet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5933E97727EA08C300C8D25D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5933E97927EA08C300C8D25D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5933E97B27EA08C300C8D25D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5933E97E27EA08C300C8D25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5933E98027EA08C500C8D25D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5933E98327EA08C500C8D25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5933E98527EA08C500C8D25D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5933E98A27EA08C500C8D25D /* Terra PlanetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Terra PlanetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5933E98E27EA08C500C8D25D /* Terra_PlanetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_PlanetTests.swift; sourceTree = "<group>"; };
+		5933E99427EA08C500C8D25D /* Terra PlanetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Terra PlanetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5933E99827EA08C500C8D25D /* Terra_PlanetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_PlanetUITests.swift; sourceTree = "<group>"; };
+		5933E99A27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_PlanetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5933E97127EA08C300C8D25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5933E98727EA08C500C8D25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5933E99127EA08C500C8D25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5933E96B27EA08C300C8D25D = {
+			isa = PBXGroup;
+			children = (
+				5933E97627EA08C300C8D25D /* Terra Planet */,
+				5933E98D27EA08C500C8D25D /* Terra PlanetTests */,
+				5933E99727EA08C500C8D25D /* Terra PlanetUITests */,
+				5933E97527EA08C300C8D25D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5933E97527EA08C300C8D25D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5933E97427EA08C300C8D25D /* Terra Planet.app */,
+				5933E98A27EA08C500C8D25D /* Terra PlanetTests.xctest */,
+				5933E99427EA08C500C8D25D /* Terra PlanetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5933E97627EA08C300C8D25D /* Terra Planet */ = {
+			isa = PBXGroup;
+			children = (
+				5933E97727EA08C300C8D25D /* AppDelegate.swift */,
+				5933E97927EA08C300C8D25D /* SceneDelegate.swift */,
+				5933E97B27EA08C300C8D25D /* ViewController.swift */,
+				5933E97D27EA08C300C8D25D /* Main.storyboard */,
+				5933E98027EA08C500C8D25D /* Assets.xcassets */,
+				5933E98227EA08C500C8D25D /* LaunchScreen.storyboard */,
+				5933E98527EA08C500C8D25D /* Info.plist */,
+			);
+			path = "Terra Planet";
+			sourceTree = "<group>";
+		};
+		5933E98D27EA08C500C8D25D /* Terra PlanetTests */ = {
+			isa = PBXGroup;
+			children = (
+				5933E98E27EA08C500C8D25D /* Terra_PlanetTests.swift */,
+			);
+			path = "Terra PlanetTests";
+			sourceTree = "<group>";
+		};
+		5933E99727EA08C500C8D25D /* Terra PlanetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5933E99827EA08C500C8D25D /* Terra_PlanetUITests.swift */,
+				5933E99A27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift */,
+			);
+			path = "Terra PlanetUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5933E97327EA08C300C8D25D /* Terra Planet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5933E99E27EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra Planet" */;
+			buildPhases = (
+				5933E97027EA08C300C8D25D /* Sources */,
+				5933E97127EA08C300C8D25D /* Frameworks */,
+				5933E97227EA08C300C8D25D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Terra Planet";
+			productName = "Terra Planet";
+			productReference = 5933E97427EA08C300C8D25D /* Terra Planet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5933E98927EA08C500C8D25D /* Terra PlanetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5933E9A127EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra PlanetTests" */;
+			buildPhases = (
+				5933E98627EA08C500C8D25D /* Sources */,
+				5933E98727EA08C500C8D25D /* Frameworks */,
+				5933E98827EA08C500C8D25D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5933E98C27EA08C500C8D25D /* PBXTargetDependency */,
+			);
+			name = "Terra PlanetTests";
+			productName = "Terra PlanetTests";
+			productReference = 5933E98A27EA08C500C8D25D /* Terra PlanetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5933E99327EA08C500C8D25D /* Terra PlanetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5933E9A427EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra PlanetUITests" */;
+			buildPhases = (
+				5933E99027EA08C500C8D25D /* Sources */,
+				5933E99127EA08C500C8D25D /* Frameworks */,
+				5933E99227EA08C500C8D25D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5933E99627EA08C500C8D25D /* PBXTargetDependency */,
+			);
+			name = "Terra PlanetUITests";
+			productName = "Terra PlanetUITests";
+			productReference = 5933E99427EA08C500C8D25D /* Terra PlanetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5933E96C27EA08C300C8D25D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					5933E97327EA08C300C8D25D = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					5933E98927EA08C500C8D25D = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 5933E97327EA08C300C8D25D;
+					};
+					5933E99327EA08C500C8D25D = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 5933E97327EA08C300C8D25D;
+					};
+				};
+			};
+			buildConfigurationList = 5933E96F27EA08C300C8D25D /* Build configuration list for PBXProject "Terra Planet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5933E96B27EA08C300C8D25D;
+			productRefGroup = 5933E97527EA08C300C8D25D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5933E97327EA08C300C8D25D /* Terra Planet */,
+				5933E98927EA08C500C8D25D /* Terra PlanetTests */,
+				5933E99327EA08C500C8D25D /* Terra PlanetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5933E97227EA08C300C8D25D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5933E98427EA08C500C8D25D /* LaunchScreen.storyboard in Resources */,
+				5933E98127EA08C500C8D25D /* Assets.xcassets in Resources */,
+				5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5933E98827EA08C500C8D25D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5933E99227EA08C500C8D25D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5933E97027EA08C300C8D25D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5933E97C27EA08C300C8D25D /* ViewController.swift in Sources */,
+				5933E97827EA08C300C8D25D /* AppDelegate.swift in Sources */,
+				5933E97A27EA08C300C8D25D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5933E98627EA08C500C8D25D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5933E98F27EA08C500C8D25D /* Terra_PlanetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5933E99027EA08C500C8D25D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5933E99927EA08C500C8D25D /* Terra_PlanetUITests.swift in Sources */,
+				5933E99B27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5933E98C27EA08C500C8D25D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5933E97327EA08C300C8D25D /* Terra Planet */;
+			targetProxy = 5933E98B27EA08C500C8D25D /* PBXContainerItemProxy */;
+		};
+		5933E99627EA08C500C8D25D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5933E97327EA08C300C8D25D /* Terra Planet */;
+			targetProxy = 5933E99527EA08C500C8D25D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5933E97D27EA08C300C8D25D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5933E97E27EA08C300C8D25D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5933E98227EA08C500C8D25D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5933E98327EA08C500C8D25D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5933E99C27EA08C500C8D25D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5933E99D27EA08C500C8D25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5933E99F27EA08C500C8D25D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Terra Planet/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-Planet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5933E9A027EA08C500C8D25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Terra Planet/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-Planet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5933E9A227EA08C500C8D25D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-PlanetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Terra Planet.app/Terra Planet";
+			};
+			name = Debug;
+		};
+		5933E9A327EA08C500C8D25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-PlanetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Terra Planet.app/Terra Planet";
+			};
+			name = Release;
+		};
+		5933E9A527EA08C500C8D25D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-PlanetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Terra Planet";
+			};
+			name = Debug;
+		};
+		5933E9A627EA08C500C8D25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-PlanetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Terra Planet";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5933E96F27EA08C300C8D25D /* Build configuration list for PBXProject "Terra Planet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5933E99C27EA08C500C8D25D /* Debug */,
+				5933E99D27EA08C500C8D25D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5933E99E27EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra Planet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5933E99F27EA08C500C8D25D /* Debug */,
+				5933E9A027EA08C500C8D25D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5933E9A127EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra PlanetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5933E9A227EA08C500C8D25D /* Debug */,
+				5933E9A327EA08C500C8D25D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5933E9A427EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra PlanetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5933E9A527EA08C500C8D25D /* Debug */,
+				5933E9A627EA08C500C8D25D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5933E96C27EA08C300C8D25D /* Project object */;
+}
