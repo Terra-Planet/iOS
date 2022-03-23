@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03EBE9F7EE82C11775DAF250 /* Pods_Terra_Planet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF1C46317E711513B089ECD /* Pods_Terra_Planet.framework */; };
+		410CBD1435E8F475EC03637D /* Pods_Terra_Planet_Terra_PlanetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02E22F51BC5FFD6B62BB0D7 /* Pods_Terra_Planet_Terra_PlanetUITests.framework */; };
+		5908BA8327EB497800AC0ED8 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */; };
+		5908BA8527EB499800AC0ED8 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */; };
+		5921171D27EB53F7001E1DC0 /* NewWalletInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */; };
+		5921171F27EB5668001E1DC0 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921171E27EB5668001E1DC0 /* First.swift */; };
+		5921172127EB628C001E1DC0 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5921172027EB628C001E1DC0 /* HomeTab.storyboard */; };
+		5921172427EB62CB001E1DC0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921172327EB62CB001E1DC0 /* HomeVC.swift */; };
+		5921172627EB63B1001E1DC0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5921172527EB63B1001E1DC0 /* Home.storyboard */; };
 		5933E97827EA08C300C8D25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97727EA08C300C8D25D /* AppDelegate.swift */; };
 		5933E97A27EA08C300C8D25D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97927EA08C300C8D25D /* SceneDelegate.swift */; };
-		5933E97C27EA08C300C8D25D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97B27EA08C300C8D25D /* ViewController.swift */; };
+		5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97B27EA08C300C8D25D /* FirstVC.swift */; };
 		5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5933E97D27EA08C300C8D25D /* Main.storyboard */; };
 		5933E98127EA08C500C8D25D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5933E98027EA08C500C8D25D /* Assets.xcassets */; };
 		5933E98427EA08C500C8D25D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5933E98227EA08C500C8D25D /* LaunchScreen.storyboard */; };
 		5933E98F27EA08C500C8D25D /* Terra_PlanetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E98E27EA08C500C8D25D /* Terra_PlanetTests.swift */; };
 		5933E99927EA08C500C8D25D /* Terra_PlanetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E99827EA08C500C8D25D /* Terra_PlanetUITests.swift */; };
 		5933E99B27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E99A27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift */; };
+		5933E9AE27EA09CE00C8D25D /* NodeRunner.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9AD27EA09CE00C8D25D /* NodeRunner.mm */; };
+		5933E9AF27EA0C0E00C8D25D /* NodeMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5933E9A727EA098E00C8D25D /* NodeMobile.framework */; };
+		5933E9B027EA0C0E00C8D25D /* NodeMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5933E9A727EA098E00C8D25D /* NodeMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5933E9B427EA189D00C8D25D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9B327EA189D00C8D25D /* API.swift */; };
+		5933E9B627EA190100C8D25D /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9B527EA190100C8D25D /* Wallet.swift */; };
+		5933E9BA27EA19AD00C8D25D /* nodejs-project in Resources */ = {isa = PBXBuildFile; fileRef = 5933E9B927EA19AD00C8D25D /* nodejs-project */; };
+		5933E9BC27EA22DC00C8D25D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9BB27EA22DC00C8D25D /* Network.swift */; };
+		5933E9BE27EA294E00C8D25D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9BD27EA294E00C8D25D /* Balance.swift */; };
+		5933E9C027EA2B1B00C8D25D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9BF27EA2B1B00C8D25D /* KeyChain.swift */; };
+		5933E9C227EA311200C8D25D /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9C127EA311200C8D25D /* KeyChainManager.swift */; };
+		59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40027EB4C3000544B62 /* Onboarding.swift */; };
+		59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */; };
+		6C6CD1F011662E58716096BE /* Pods_Terra_PlanetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75ACB7AA745F46C5D89123C8 /* Pods_Terra_PlanetTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +57,34 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5933E9B127EA0C0E00C8D25D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5933E9B027EA0C0E00C8D25D /* NodeMobile.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A8C908FDD59E110954440AF /* Pods-Terra Planet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Planet.release.xcconfig"; path = "Target Support Files/Pods-Terra Planet/Pods-Terra Planet.release.xcconfig"; sourceTree = "<group>"; };
+		2247FF0D6B5B06A2243E5DEC /* Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig"; path = "Target Support Files/Pods-Terra Planet-Terra PlanetUITests/Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfo.swift; sourceTree = "<group>"; };
+		5921171E27EB5668001E1DC0 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
+		5921172027EB628C001E1DC0 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
+		5921172327EB62CB001E1DC0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5921172527EB63B1001E1DC0 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5933E97427EA08C300C8D25D /* Terra Planet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra Planet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5933E97727EA08C300C8D25D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5933E97927EA08C300C8D25D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5933E97B27EA08C300C8D25D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5933E97B27EA08C300C8D25D /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		5933E97E27EA08C300C8D25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5933E98027EA08C500C8D25D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5933E98327EA08C500C8D25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +94,26 @@
 		5933E99427EA08C500C8D25D /* Terra PlanetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Terra PlanetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5933E99827EA08C500C8D25D /* Terra_PlanetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_PlanetUITests.swift; sourceTree = "<group>"; };
 		5933E99A27EA08C500C8D25D /* Terra_PlanetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terra_PlanetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5933E9A727EA098E00C8D25D /* NodeMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NodeMobile.framework; sourceTree = "<group>"; };
+		5933E9AB27EA09CE00C8D25D /* Terra Planet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Terra Planet-Bridging-Header.h"; sourceTree = "<group>"; };
+		5933E9AC27EA09CE00C8D25D /* NodeRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeRunner.h; sourceTree = "<group>"; };
+		5933E9AD27EA09CE00C8D25D /* NodeRunner.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NodeRunner.mm; sourceTree = "<group>"; };
+		5933E9B327EA189D00C8D25D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		5933E9B527EA190100C8D25D /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		5933E9B927EA19AD00C8D25D /* nodejs-project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "nodejs-project"; sourceTree = "<group>"; };
+		5933E9BB27EA22DC00C8D25D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5933E9BD27EA294E00C8D25D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		5933E9BF27EA2B1B00C8D25D /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		5933E9C127EA311200C8D25D /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		59A9E40027EB4C3000544B62 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfoVC.swift; sourceTree = "<group>"; };
+		75ACB7AA745F46C5D89123C8 /* Pods_Terra_PlanetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terra_PlanetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1324DB6D7CB710488ECA30 /* Pods-Terra PlanetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra PlanetTests.release.xcconfig"; path = "Target Support Files/Pods-Terra PlanetTests/Pods-Terra PlanetTests.release.xcconfig"; sourceTree = "<group>"; };
+		A598754D3587CB8210D3AE6E /* Pods-Terra Planet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Planet.debug.xcconfig"; path = "Target Support Files/Pods-Terra Planet/Pods-Terra Planet.debug.xcconfig"; sourceTree = "<group>"; };
+		B0C6E65815B5FDDA98EC1347 /* Pods-Terra Planet-Terra PlanetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Planet-Terra PlanetUITests.release.xcconfig"; path = "Target Support Files/Pods-Terra Planet-Terra PlanetUITests/Pods-Terra Planet-Terra PlanetUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E02E22F51BC5FFD6B62BB0D7 /* Pods_Terra_Planet_Terra_PlanetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terra_Planet_Terra_PlanetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8CDE9C1523FC257EAD80A8 /* Pods-Terra PlanetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra PlanetTests.debug.xcconfig"; path = "Target Support Files/Pods-Terra PlanetTests/Pods-Terra PlanetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCF1C46317E711513B089ECD /* Pods_Terra_Planet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terra_Planet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5933E9AF27EA0C0E00C8D25D /* NodeMobile.framework in Frameworks */,
+				03EBE9F7EE82C11775DAF250 /* Pods_Terra_Planet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6CD1F011662E58716096BE /* Pods_Terra_PlanetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +138,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410CBD1435E8F475EC03637D /* Pods_Terra_Planet_Terra_PlanetUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5908BA7F27EB491300AC0ED8 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				5933E97D27EA08C300C8D25D /* Main.storyboard */,
+				5933E97B27EA08C300C8D25D /* FirstVC.swift */,
+				5921171E27EB5668001E1DC0 /* First.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		5908BA8027EB492C00AC0ED8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5933E9BF27EA2B1B00C8D25D /* KeyChain.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5908BA8127EB493700AC0ED8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5908BA7F27EB491300AC0ED8 /* Start */,
+				5908BA8627EB499E00AC0ED8 /* Onboarding */,
+				5921172227EB62A4001E1DC0 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5908BA8627EB499E00AC0ED8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */,
+				59A9E40227EB529600544B62 /* Onboarding */,
+				59A9E40527EB52E800544B62 /* New Wallet Into */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5921172227EB62A4001E1DC0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5921172027EB628C001E1DC0 /* HomeTab.storyboard */,
+				5921172527EB63B1001E1DC0 /* Home.storyboard */,
+				5921172327EB62CB001E1DC0 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		5933E96B27EA08C300C8D25D = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +200,8 @@
 				5933E98D27EA08C500C8D25D /* Terra PlanetTests */,
 				5933E99727EA08C500C8D25D /* Terra PlanetUITests */,
 				5933E97527EA08C300C8D25D /* Products */,
+				A5474A478549EF5E1AE53601 /* Pods */,
+				F82D2051DDC60BDF4D2F17EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +218,20 @@
 		5933E97627EA08C300C8D25D /* Terra Planet */ = {
 			isa = PBXGroup;
 			children = (
+				5908BA8027EB492C00AC0ED8 /* Utils */,
 				5933E97727EA08C300C8D25D /* AppDelegate.swift */,
 				5933E97927EA08C300C8D25D /* SceneDelegate.swift */,
-				5933E97B27EA08C300C8D25D /* ViewController.swift */,
-				5933E97D27EA08C300C8D25D /* Main.storyboard */,
+				5908BA8127EB493700AC0ED8 /* Views */,
+				5933E9B727EA192800C8D25D /* API */,
+				5933E9B827EA193200C8D25D /* Model */,
 				5933E98027EA08C500C8D25D /* Assets.xcassets */,
 				5933E98227EA08C500C8D25D /* LaunchScreen.storyboard */,
+				5933E9B927EA19AD00C8D25D /* nodejs-project */,
+				5933E9AC27EA09CE00C8D25D /* NodeRunner.h */,
+				5933E9AD27EA09CE00C8D25D /* NodeRunner.mm */,
+				5933E9A727EA098E00C8D25D /* NodeMobile.framework */,
 				5933E98527EA08C500C8D25D /* Info.plist */,
+				5933E9AB27EA09CE00C8D25D /* Terra Planet-Bridging-Header.h */,
 			);
 			path = "Terra Planet";
 			sourceTree = "<group>";
@@ -127,6 +253,66 @@
 			path = "Terra PlanetUITests";
 			sourceTree = "<group>";
 		};
+		5933E9B727EA192800C8D25D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5933E9B327EA189D00C8D25D /* API.swift */,
+				5933E9BB27EA22DC00C8D25D /* Network.swift */,
+				5933E9C127EA311200C8D25D /* KeyChainManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5933E9B827EA193200C8D25D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5933E9B527EA190100C8D25D /* Wallet.swift */,
+				5933E9BD27EA294E00C8D25D /* Balance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59A9E40227EB529600544B62 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */,
+				59A9E40027EB4C3000544B62 /* Onboarding.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		59A9E40527EB52E800544B62 /* New Wallet Into */ = {
+			isa = PBXGroup;
+			children = (
+				59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */,
+				5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */,
+			);
+			path = "New Wallet Into";
+			sourceTree = "<group>";
+		};
+		A5474A478549EF5E1AE53601 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A598754D3587CB8210D3AE6E /* Pods-Terra Planet.debug.xcconfig */,
+				1A8C908FDD59E110954440AF /* Pods-Terra Planet.release.xcconfig */,
+				2247FF0D6B5B06A2243E5DEC /* Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig */,
+				B0C6E65815B5FDDA98EC1347 /* Pods-Terra Planet-Terra PlanetUITests.release.xcconfig */,
+				FB8CDE9C1523FC257EAD80A8 /* Pods-Terra PlanetTests.debug.xcconfig */,
+				9F1324DB6D7CB710488ECA30 /* Pods-Terra PlanetTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F82D2051DDC60BDF4D2F17EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCF1C46317E711513B089ECD /* Pods_Terra_Planet.framework */,
+				E02E22F51BC5FFD6B62BB0D7 /* Pods_Terra_Planet_Terra_PlanetUITests.framework */,
+				75ACB7AA745F46C5D89123C8 /* Pods_Terra_PlanetTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +320,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5933E99E27EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra Planet" */;
 			buildPhases = (
+				8942E7F317866E5D3E5A3431 /* [CP] Check Pods Manifest.lock */,
 				5933E97027EA08C300C8D25D /* Sources */,
 				5933E97127EA08C300C8D25D /* Frameworks */,
 				5933E97227EA08C300C8D25D /* Resources */,
+				5933E9B127EA0C0E00C8D25D /* Embed Frameworks */,
+				6B4CCBFDF04CC099F8FB1439 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +340,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5933E9A127EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra PlanetTests" */;
 			buildPhases = (
+				781018A8636D04A0247B8BE3 /* [CP] Check Pods Manifest.lock */,
 				5933E98627EA08C500C8D25D /* Sources */,
 				5933E98727EA08C500C8D25D /* Frameworks */,
 				5933E98827EA08C500C8D25D /* Resources */,
@@ -169,9 +359,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5933E9A427EA08C500C8D25D /* Build configuration list for PBXNativeTarget "Terra PlanetUITests" */;
 			buildPhases = (
+				A2FAA5BE161373F916DF3E89 /* [CP] Check Pods Manifest.lock */,
 				5933E99027EA08C500C8D25D /* Sources */,
 				5933E99127EA08C500C8D25D /* Frameworks */,
 				5933E99227EA08C500C8D25D /* Resources */,
+				7A7738FA1BFDF8B963B02191 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +387,7 @@
 				TargetAttributes = {
 					5933E97327EA08C300C8D25D = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 					5933E98927EA08C500C8D25D = {
 						CreatedOnToolsVersion = 13.3;
@@ -231,7 +424,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5921172627EB63B1001E1DC0 /* Home.storyboard in Resources */,
 				5933E98427EA08C500C8D25D /* LaunchScreen.storyboard in Resources */,
+				5908BA8327EB497800AC0ED8 /* Onboarding.storyboard in Resources */,
+				5933E9BA27EA19AD00C8D25D /* nodejs-project in Resources */,
+				5921172127EB628C001E1DC0 /* HomeTab.storyboard in Resources */,
 				5933E98127EA08C500C8D25D /* Assets.xcassets in Resources */,
 				5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */,
 			);
@@ -253,14 +450,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B4CCBFDF04CC099F8FB1439 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Terra Planet/Pods-Terra Planet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Terra Planet/Pods-Terra Planet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Terra Planet/Pods-Terra Planet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		781018A8636D04A0247B8BE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Terra PlanetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A7738FA1BFDF8B963B02191 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Terra Planet-Terra PlanetUITests/Pods-Terra Planet-Terra PlanetUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Terra Planet-Terra PlanetUITests/Pods-Terra Planet-Terra PlanetUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Terra Planet-Terra PlanetUITests/Pods-Terra Planet-Terra PlanetUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8942E7F317866E5D3E5A3431 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Terra Planet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2FAA5BE161373F916DF3E89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Terra Planet-Terra PlanetUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5933E97027EA08C300C8D25D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5933E97C27EA08C300C8D25D /* ViewController.swift in Sources */,
+				5933E9B627EA190100C8D25D /* Wallet.swift in Sources */,
+				5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */,
+				5933E9AE27EA09CE00C8D25D /* NodeRunner.mm in Sources */,
 				5933E97827EA08C300C8D25D /* AppDelegate.swift in Sources */,
 				5933E97A27EA08C300C8D25D /* SceneDelegate.swift in Sources */,
+				5921171F27EB5668001E1DC0 /* First.swift in Sources */,
+				5933E9BC27EA22DC00C8D25D /* Network.swift in Sources */,
+				59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */,
+				5921171D27EB53F7001E1DC0 /* NewWalletInfo.swift in Sources */,
+				5921172427EB62CB001E1DC0 /* HomeVC.swift in Sources */,
+				5908BA8527EB499800AC0ED8 /* OnboardingVC.swift in Sources */,
+				5933E9BE27EA294E00C8D25D /* Balance.swift in Sources */,
+				59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */,
+				5933E9C227EA311200C8D25D /* KeyChainManager.swift in Sources */,
+				5933E9C027EA2B1B00C8D25D /* KeyChain.swift in Sources */,
+				5933E9B427EA189D00C8D25D /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,12 +745,20 @@
 		};
 		5933E99F27EA08C500C8D25D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A598754D3587CB8210D3AE6E /* Pods-Terra Planet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Terra\\ Planet",
+					"$(PROJECT_DIR)/Terra\\ Planet",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra Planet/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -453,19 +774,29 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-Planet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Terra Planet/Terra Planet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		5933E9A027EA08C500C8D25D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A8C908FDD59E110954440AF /* Pods-Terra Planet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8P26MFFBDF;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Terra\\ Planet",
+					"$(PROJECT_DIR)/Terra\\ Planet",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Terra Planet/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -481,13 +812,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-Planet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Terra Planet/Terra Planet-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		5933E9A227EA08C500C8D25D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB8CDE9C1523FC257EAD80A8 /* Pods-Terra PlanetTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +841,7 @@
 		};
 		5933E9A327EA08C500C8D25D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F1324DB6D7CB710488ECA30 /* Pods-Terra PlanetTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +862,7 @@
 		};
 		5933E9A527EA08C500C8D25D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2247FF0D6B5B06A2243E5DEC /* Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +881,7 @@
 		};
 		5933E9A627EA08C500C8D25D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0C6E65815B5FDDA98EC1347 /* Pods-Terra Planet-Terra PlanetUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

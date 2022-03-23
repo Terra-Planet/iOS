@@ -1,0 +1,17 @@
+{
+  "name": "picopay-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hugo Urquiza",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@anchor-protocol/anchor-earn": "^2.0.0",
+    "@terra-money/terra.js": "^3.0.8",
+    "express": "^4.17.3",
+    "isomorphic-fetch": "^3.0.0"
+  }
+}
