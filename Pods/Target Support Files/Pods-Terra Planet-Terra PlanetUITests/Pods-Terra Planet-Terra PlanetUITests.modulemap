@@ -1,6 +1,0 @@
-framework module Pods_Terra_Planet_Terra_PlanetUITests {
-  umbrella header "Pods-Terra Planet-Terra PlanetUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
