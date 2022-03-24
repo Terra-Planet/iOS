@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ReceiveVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController restorationIdentifier="ReceiveVC" storyboardIdentifier="ReceiveVC" id="Y6W-OH-hqX" customClass="ReceiveVC" customModule="Terra_Planet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esd-yL-IM3">
+                                <rect key="frame" x="20" y="104" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="esd-yL-IM3" secondAttribute="height" multiplier="1:1" id="pFx-Sl-Xpw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="terra1gflzelp64032dj8qa6wz0zqcenjc7gwdc6tqj4" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9c-YQ-98Z">
+                                <rect key="frame" x="20" y="536" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56C-bq-sXe">
+                                <rect key="frame" x="20" y="508" width="374" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-lY-Rmf">
+                                <rect key="frame" x="149.5" y="587" width="115" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Copy Address"/>
+                                <connections>
+                                    <action selector="copyAddress:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gs5-wX-1Il"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="56C-bq-sXe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="8oK-pJ-2bP"/>
+                            <constraint firstItem="esd-yL-IM3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="GOO-Ch-2pN"/>
+                            <constraint firstItem="L9c-YQ-98Z" firstAttribute="top" secondItem="56C-bq-sXe" secondAttribute="bottom" constant="10" id="Kjn-lh-FDo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="esd-yL-IM3" secondAttribute="trailing" constant="20" id="Lae-ca-ISz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="56C-bq-sXe" secondAttribute="trailing" constant="20" id="TYb-zQ-Asr"/>
+                            <constraint firstItem="YJO-lY-Rmf" firstAttribute="top" secondItem="L9c-YQ-98Z" secondAttribute="bottom" constant="30" id="WTb-Qx-x9g"/>
+                            <constraint firstItem="esd-yL-IM3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="aM2-xP-6GO"/>
+                            <constraint firstItem="56C-bq-sXe" firstAttribute="top" secondItem="esd-yL-IM3" secondAttribute="bottom" constant="30" id="hkD-Dq-Ovw"/>
+                            <constraint firstItem="YJO-lY-Rmf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="tTN-ZJ-fHT"/>
+                            <constraint firstItem="L9c-YQ-98Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="tyu-W0-pYl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L9c-YQ-98Z" secondAttribute="trailing" constant="20" id="wT1-Ju-EMr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="qr" destination="esd-yL-IM3" id="UqL-na-jOO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
