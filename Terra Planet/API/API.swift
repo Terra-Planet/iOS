@@ -14,8 +14,24 @@ final class API {
     
     var wallet: Wallet?
     
-    private let local = "http://127.0.0.1:3000/"
+    var balance: Double = 0
+    var lunaPrice: Double = 0
     
+    private let local = "http://127.0.0.1:3000/"
+ 
+    //MARK: Server Status
+    func status(callback: @escaping (_ status: Bool) -> Void) {
+        Network.shared.get("\(local)server/status") { response in
+            if response.status == 200 {
+                callback(true)
+            }
+            else {
+                callback(false)
+            }
+        }
+    }
+    
+    //MARK: Wallet
     func createWallet(callback: @escaping (_ status: Bool) -> Void) {
         if wallet == nil {
             Network.shared.get("\(local)wallet/create") { response in
@@ -34,35 +50,54 @@ final class API {
         }
     }
     
-    func balance(callback: @escaping (_ balance: [Balance]?) -> Void) {
+    func balance(callback: @escaping (_ balance: [Balance]) -> Void) {
         if let wallet = wallet {
+            var resp: [Balance] = []
+            balance = 0
+            var terra = false
+            var anchor = false
+            //MARK: Get Terra Balance
             Network.shared.get("\(local)wallet/balance/\(wallet.address)") { response in
                 if response.status == 200 {
-                    var resp: [Balance] = []
-                    if response.data["anchor"]["balance"].floatValue != 0 {
-                        resp.append(Balance(coin: "aUST", amount: response.data["anchor"]["balance"].floatValue / 1000000))
-                    }
-                
-                    
                     let native = JSON(parseJSON: response.data["native"][0].stringValue)
                     for coin in native.arrayValue {
-                        resp.append(Balance(coin: coin["denom"].stringValue, amount: (coin["amount"].floatValue / 1000000)))
+                        let amount = (coin["amount"].doubleValue / 1000000)
+                        if coin["denom"].stringValue == "uluna" {
+                            self.balance += amount * self.lunaPrice
+                        }
+                        else {
+                            self.balance += amount
+                        }
+                        resp.append(Balance(coin: coin["denom"].stringValue, amount: amount))
                     }
-                    callback(resp)
+                    terra = true
+                    if anchor {
+                        callback(resp)
+                    }
                 }
-                else {
-                    callback(nil)
+            }
+            
+            //MARK: Get Anchor Balance
+            Network.shared.post("\(local)anchor/balance", data: ["mnemonic":wallet.mnemonic]) { response in
+                if response.status == 200 {
+                    self.balance += response.data["total_deposit_balance_in_ust"].doubleValue
+                    resp.append(Balance(coin: "anchor", amount: response.data["total_deposit_balance_in_ust"].doubleValue))
+                    anchor = true
+                    if terra {
+                        callback(resp)
+                    }
                 }
             }
         }
         else {
-            callback(nil)
+            callback([])
         }
     }
     
     func send(token: String, amount: String, address: String, callback: @escaping (_ status: Bool) -> Void) {
         if let wallet = wallet {
             let payload: [String:Any] = [
+                "fee_token" : "uluna",
                 "token" : token,
                 "amount" : amount,
                 "dst_addr" : address,
@@ -85,6 +120,7 @@ final class API {
     func swap(from: String, to: String, amount: String, callback: @escaping (_ status: Bool) -> Void) {
         if let wallet = wallet {
             let payload: [String:Any] = [
+                "fee_token" : "uluna",
                 "src" : from,
                 "amount" : amount,
                 "dst" : to,
@@ -104,6 +140,7 @@ final class API {
         }
     }
     
+    //MARK: Anchor
     func anchorDeposit(amount: String, callback: @escaping (_ status: Bool) -> Void) {
         if let wallet = wallet {
             let payload: [String:Any] = [
@@ -143,6 +180,36 @@ final class API {
         }
         else {
             callback(false)
+        }
+    }
+    
+    //MARK: Rates
+    func apy(callback: @escaping (_ apy: Double) -> Void) {
+        if let wallet = wallet {
+            Network.shared.post("\(local)anchor/market", data: ["mnemonic":wallet.mnemonic]) { response in
+                if response.status == 200 {
+                    callback(response.data["APY"].doubleValue)
+                }
+                else {
+                    callback(0)
+                }
+            }
+        }
+        else {
+            callback(0)
+        }
+    }
+    
+    func prices(callback: @escaping (_ status: Bool) -> Void) {
+        Network.shared.get("\(local)wallet/rate/uluna/uusd") { response in
+            if response.status == 200 {
+                print(response.data)
+                self.lunaPrice = response.data["amount"].doubleValue
+                callback(true)
+            }
+            else {
+                callback(false)
+            }
         }
     }
 }
