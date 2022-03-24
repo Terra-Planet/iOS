@@ -9,5 +9,5 @@ import Foundation
 
 struct Balance {
     let coin: String
-    let amount: Float
+    let amount: Double
 }
