@@ -25,7 +25,7 @@ final class KeyChainManager {
         if let receivedData = KeyChain.load(key: "wallet") {
             if let json = try? JSON(data: receivedData) {
                 print("Wallet Loaded: \(json)")
-                API.shared.wallet = Wallet(address: json["address"].stringValue, mnemonic: json["mnemonic"].stringValue)
+                API.shared.wallet = Wallet(address: json["address"].stringValue, mnemonic: json["mnemonic"].stringValue, coins: [:])
                 return true
             }
             else {
