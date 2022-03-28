@@ -24,15 +24,16 @@ class ImportWalletVC: UIViewController, UITextViewDelegate {
         let loading = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: .alert)
         present(loading, animated: true)
         getWalletFromSeeds(seeds: seedTextview.text) { status in
-            loading.dismiss(animated: true)
-            if status {
-                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
-                self.present(vc, animated: false)
-            }
-            else {
-                let alert = UIAlertController(title: "Error", message: "Invalid Seeds. Wallet not found", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default))
-                self.present(alert, animated: true)
+            loading.dismiss(animated: true) {
+                if status {
+                    let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
+                    self.present(vc, animated: false)
+                }
+                else {
+                    let alert = UIAlertController(title: "Error", message: "Invalid Seeds. Wallet not found", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default))
+                    self.present(alert, animated: true)
+                }
             }
         }
     }
