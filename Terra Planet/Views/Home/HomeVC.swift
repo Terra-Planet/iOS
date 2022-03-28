@@ -35,28 +35,28 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func receive(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Receive", bundle: nil).instantiateViewController(identifier: "ReceiveVC")
+        let vc = UIStoryboard(name: "Receive", bundle: nil).instantiateViewController(withIdentifier: "ReceiveVC")
         self.present(vc, animated: true)
     }
     
     @IBAction func swap(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Swap", bundle: nil).instantiateViewController(identifier: "SwapVC")
+        let vc = UIStoryboard(name: "Swap", bundle: nil).instantiateViewController(withIdentifier: "SwapVC")
         self.present(vc, animated: true)
     }
     
     @IBAction func send(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Send", bundle: nil).instantiateViewController(identifier: "SendVC")
+        let vc = UIStoryboard(name: "Send", bundle: nil).instantiateViewController(withIdentifier: "SendVC")
         self.present(vc, animated: true)
     }
     
     @IBAction func anchorDeposit(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Anchor", bundle: nil).instantiateViewController(identifier: "AnchorVC") as! AnchorVC
+        let vc = UIStoryboard(name: "Anchor", bundle: nil).instantiateViewController(withIdentifier: "AnchorVC") as! AnchorVC
         vc.anchorAction = .deposit
         self.present(vc, animated: true)
     }
     
     @IBAction func anchorWithdraw(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Anchor", bundle: nil).instantiateViewController(identifier: "AnchorVC") as! AnchorVC
+        let vc = UIStoryboard(name: "Anchor", bundle: nil).instantiateViewController(withIdentifier: "AnchorVC") as! AnchorVC
         vc.anchorAction = .withdraw
         self.present(vc, animated: true)
     }

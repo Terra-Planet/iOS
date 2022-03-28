@@ -37,7 +37,7 @@ class SendVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func scanAddress(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "QR", bundle: nil).instantiateViewController(identifier: "ScannerViewController") as! ScannerViewController
+        let vc = UIStoryboard(name: "QR", bundle: nil).instantiateViewController(withIdentifier: "ScannerViewController") as! ScannerViewController
         vc.callback = {(address) in
             self.address.text = address
         }

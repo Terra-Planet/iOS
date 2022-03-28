@@ -24,7 +24,6 @@
 		592FA2E827EDE8A400955BF7 /* Anchor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592FA2E727EDE8A400955BF7 /* Anchor.storyboard */; };
 		592FA2EA27EDE8B200955BF7 /* AnchorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592FA2E927EDE8B200955BF7 /* AnchorVC.swift */; };
 		5933E97827EA08C300C8D25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97727EA08C300C8D25D /* AppDelegate.swift */; };
-		5933E97A27EA08C300C8D25D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97927EA08C300C8D25D /* SceneDelegate.swift */; };
 		5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E97B27EA08C300C8D25D /* FirstVC.swift */; };
 		5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5933E97D27EA08C300C8D25D /* Main.storyboard */; };
 		5933E98127EA08C500C8D25D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5933E98027EA08C500C8D25D /* Assets.xcassets */; };
@@ -108,7 +107,6 @@
 		592FA2E927EDE8B200955BF7 /* AnchorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorVC.swift; sourceTree = "<group>"; };
 		5933E97427EA08C300C8D25D /* Terra Planet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Terra Planet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5933E97727EA08C300C8D25D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5933E97927EA08C300C8D25D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5933E97B27EA08C300C8D25D /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		5933E97E27EA08C300C8D25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5933E98027EA08C500C8D25D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -285,7 +283,6 @@
 			children = (
 				5908BA8027EB492C00AC0ED8 /* Utils */,
 				5933E97727EA08C300C8D25D /* AppDelegate.swift */,
-				5933E97927EA08C300C8D25D /* SceneDelegate.swift */,
 				5908BA8127EB493700AC0ED8 /* Views */,
 				5933E9B727EA192800C8D25D /* API */,
 				5933E9B827EA193200C8D25D /* Model */,
@@ -657,7 +654,6 @@
 				5923398927ECB7BA00E4DF84 /* SwapVC.swift in Sources */,
 				5933E9AE27EA09CE00C8D25D /* NodeRunner.mm in Sources */,
 				5933E97827EA08C300C8D25D /* AppDelegate.swift in Sources */,
-				5933E97A27EA08C300C8D25D /* SceneDelegate.swift in Sources */,
 				5921171F27EB5668001E1DC0 /* First.swift in Sources */,
 				5973AE8927EC909600F6F78E /* ReceiveVC.swift in Sources */,
 				59E2728B27EC96C4002F8C1D /* SendVC.swift in Sources */,
@@ -856,7 +852,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 8P26MFFBDF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -870,13 +866,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-Planet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -897,7 +895,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 8P26MFFBDF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -911,13 +909,15 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.terraplanet.Terra-Planet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -11,8 +11,19 @@ import SwiftyJSON
 class FirstVC: UIViewController {
 
     override func viewDidLoad() {
-        waitServer {
-            self.loadWallet()
+        loadWallet { hasWallet in
+            self.redirect(hasWallet: hasWallet)
+        }
+    }
+    
+    func redirect(hasWallet: Bool) {
+        var nextView = ["Onboarding","OBNav"]
+        if hasWallet {
+            nextView = ["Home","HomeVC"]
+        }
+        let vc = UIStoryboard(name: nextView[0], bundle: nil).instantiateViewController(withIdentifier: nextView[1])
+        DispatchQueue.main.async {
+            self.present(vc, animated: false)
         }
     }
 }

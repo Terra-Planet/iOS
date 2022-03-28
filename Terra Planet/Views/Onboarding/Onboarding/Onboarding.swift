@@ -12,7 +12,7 @@ extension OnboardingVC {
     func createWallet() {
         API.shared.createWallet { status in
             if status {
-                let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(identifier: "NewWalletInfoVC")
+                let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "NewWalletInfoVC")
                 self.navigationController?.pushViewController(vc, animated: true)
             }
             else {

@@ -10,18 +10,12 @@ import UIKit
 
 extension NewWalletInfoVC {
     
-    func loadWallet() {
+    func loadWallet() -> Wallet? {
         if let wallet = API.shared.wallet {
-            address.text = wallet.address
-            seed.text = wallet.mnemonic
+            return wallet
         }
         else {
-            navigationController?.popViewController(animated: true)
+            return nil
         }
-    }
-    
-    func nextView() {
-        let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(identifier: "HomeTab")
-        self.present(vc, animated: false)
     }
 }

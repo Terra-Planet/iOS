@@ -10,7 +10,7 @@ import UIKit
 
 extension FirstVC {
     
-    func waitServer(callback: @escaping () -> Void) {
+    private func waitServer(callback: @escaping () -> Void) {
         func ask() {
             API.shared.status { status in
                 if status {
@@ -24,19 +24,9 @@ extension FirstVC {
         ask()
     }
     
-    func loadWallet() {
-        let loadWallet = KeyChainManager.shared.loadWallet()
-        if loadWallet {
-            DispatchQueue.main.async {
-                let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(identifier: "HomeVC")
-                self.present(vc, animated: false)
-            }
-        }
-        else {
-            DispatchQueue.main.async {
-                let vc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(identifier: "OBNav")
-                self.present(vc, animated: false)
-            }
+    func loadWallet(callback: @escaping (_ hasWallet: Bool) -> Void) {
+        waitServer {
+            callback(KeyChainManager.shared.loadWallet())
         }
     }
     
