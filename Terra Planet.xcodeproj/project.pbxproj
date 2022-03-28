@@ -49,6 +49,8 @@
 		5973AE8927EC909600F6F78E /* ReceiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973AE8827EC909600F6F78E /* ReceiveVC.swift */; };
 		5973AE8B27EC90B600F6F78E /* Receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973AE8A27EC90B600F6F78E /* Receive.swift */; };
 		5973AE8D27EC910F00F6F78E /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973AE8C27EC910F00F6F78E /* QR.swift */; };
+		598E910F27F1E7BB0002B438 /* ImportWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E910E27F1E7BB0002B438 /* ImportWalletVC.swift */; };
+		598E911227F1E7E00002B438 /* ImportWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E911127F1E7E00002B438 /* ImportWallet.swift */; };
 		59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40027EB4C3000544B62 /* Onboarding.swift */; };
 		59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */; };
 		59E2728827EC96A4002F8C1D /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E2728727EC96A4002F8C1D /* Send.storyboard */; };
@@ -136,6 +138,8 @@
 		5973AE8827EC909600F6F78E /* ReceiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveVC.swift; sourceTree = "<group>"; };
 		5973AE8A27EC90B600F6F78E /* Receive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receive.swift; sourceTree = "<group>"; };
 		5973AE8C27EC910F00F6F78E /* QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR.swift; sourceTree = "<group>"; };
+		598E910E27F1E7BB0002B438 /* ImportWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWalletVC.swift; sourceTree = "<group>"; };
+		598E911127F1E7E00002B438 /* ImportWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWallet.swift; sourceTree = "<group>"; };
 		59A9E40027EB4C3000544B62 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfoVC.swift; sourceTree = "<group>"; };
 		59E2728727EC96A4002F8C1D /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */,
 				59A9E40227EB529600544B62 /* Onboarding */,
 				59A9E40527EB52E800544B62 /* New Wallet Into */,
+				598E911027F1E7C50002B438 /* Import Wallet */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -343,6 +348,15 @@
 				5973AE8A27EC90B600F6F78E /* Receive.swift */,
 			);
 			path = Receive;
+			sourceTree = "<group>";
+		};
+		598E911027F1E7C50002B438 /* Import Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				598E910E27F1E7BB0002B438 /* ImportWalletVC.swift */,
+				598E911127F1E7E00002B438 /* ImportWallet.swift */,
+			);
+			path = "Import Wallet";
 			sourceTree = "<group>";
 		};
 		59A9E40227EB529600544B62 /* Onboarding */ = {
@@ -657,6 +671,7 @@
 				5921171F27EB5668001E1DC0 /* First.swift in Sources */,
 				5973AE8927EC909600F6F78E /* ReceiveVC.swift in Sources */,
 				59E2728B27EC96C4002F8C1D /* SendVC.swift in Sources */,
+				598E911227F1E7E00002B438 /* ImportWallet.swift in Sources */,
 				5921172827EBC57C001E1DC0 /* Home.swift in Sources */,
 				5933E9BC27EA22DC00C8D25D /* Network.swift in Sources */,
 				59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */,
@@ -674,6 +689,7 @@
 				5973AE8D27EC910F00F6F78E /* QR.swift in Sources */,
 				596145F727EDEBFF00026427 /* Anchor.swift in Sources */,
 				5933E9B427EA189D00C8D25D /* API.swift in Sources */,
+				598E910F27F1E7BB0002B438 /* ImportWalletVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
