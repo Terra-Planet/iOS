@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -68,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bN0-yo-n14">
-                                <rect key="frame" x="20" y="261" width="374" height="60"/>
+                                <rect key="frame" x="20" y="270" width="374" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uusd" translatesAutoresizingMaskIntoConstraints="NO" id="KgM-cA-aTk">
                                         <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -112,16 +113,15 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZo-O9-93B">
-                                <rect key="frame" x="20" y="351" width="374" height="40"/>
+                                <rect key="frame" x="20" y="360" width="374" height="40"/>
                                 <color key="backgroundColor" name="color_blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LxI-EO-jni"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="SWAP">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="SWAP"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="8"/>
@@ -131,13 +131,14 @@
                                     <action selector="swap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iWs-Df-ybV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWR-5n-ieR">
-                                <rect key="frame" x="173.5" y="210" width="67" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWR-5n-ieR">
+                                <rect key="frame" x="187" y="210" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="BWR-5n-ieR" secondAttribute="height" multiplier="67:31" id="Yzj-24-0dG"/>
+                                    <constraint firstAttribute="height" constant="40" id="a2G-Ni-dCg"/>
+                                    <constraint firstAttribute="width" secondItem="BWR-5n-ieR" secondAttribute="height" multiplier="1:1" id="v30-Af-Nv5"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="arrow.up.arrow.down" catalog="system"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrow.up.arrow.down" catalog="system"/>
                                 <connections>
                                     <action selector="switchCoins:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0r1-45-eOC"/>
                                 </connections>

@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -160,19 +162,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyW-4m-mfX">
-                                <rect key="frame" x="20" y="358" width="374" height="75"/>
+                                <rect key="frame" x="20" y="358" width="374" height="95"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3T-0a-9gq">
-                                        <rect key="frame" x="19.5" y="20" width="105" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3T-0a-9gq">
+                                        <rect key="frame" x="19.5" y="20" width="105" height="60"/>
                                         <color key="backgroundColor" name="color_blue"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="105" id="kBT-Jp-2WQ"/>
-                                            <constraint firstAttribute="height" constant="40" id="t5j-bS-6ze"/>
+                                            <constraint firstAttribute="height" constant="60" id="t5j-bS-6ze"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.down.right" catalog="system" title="  Receive">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Receive" imagePadding="4">
+                                            <imageReference key="image" image="arrow.down.right" catalog="system" symbolScale="medium"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -183,17 +187,18 @@
                                             <action selector="receive:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BqG-ls-kaC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE7-BU-tCz">
-                                        <rect key="frame" x="134.5" y="20" width="105" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DE7-BU-tCz">
+                                        <rect key="frame" x="134.5" y="20" width="105" height="60"/>
                                         <color key="backgroundColor" name="color_blue"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="LmP-nY-KFh"/>
+                                            <constraint firstAttribute="height" constant="60" id="LmP-nY-KFh"/>
                                             <constraint firstAttribute="width" constant="105" id="uk4-NC-U9F"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.left.arrow.right" catalog="system" title="  Swap">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Swap" imagePadding="4">
+                                            <imageReference key="image" image="arrow.left.arrow.right" catalog="system" symbolScale="medium"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -204,17 +209,18 @@
                                             <action selector="swap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="d5j-TB-QEK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMn-vj-kaN">
-                                        <rect key="frame" x="249.5" y="20" width="105" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMn-vj-kaN">
+                                        <rect key="frame" x="249.5" y="20" width="105" height="60"/>
                                         <color key="backgroundColor" name="color_blue"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Uqh-iS-X55"/>
+                                            <constraint firstAttribute="height" constant="60" id="Uqh-iS-X55"/>
                                             <constraint firstAttribute="width" constant="105" id="wLY-EN-wX5"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.up.right" catalog="system" title="  Send">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Send" imagePadding="4">
+                                            <imageReference key="image" image="arrow.up.right" catalog="system" symbolScale="medium"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -228,7 +234,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="G3T-0a-9gq" firstAttribute="top" secondItem="tyW-4m-mfX" secondAttribute="top" constant="20" id="10V-AN-64R"/>
-                                    <constraint firstAttribute="height" constant="75" id="7sE-OL-BZX"/>
+                                    <constraint firstAttribute="height" constant="95" id="7sE-OL-BZX"/>
                                     <constraint firstItem="DE7-BU-tCz" firstAttribute="top" secondItem="tyW-4m-mfX" secondAttribute="top" constant="20" id="K3t-d8-swJ"/>
                                     <constraint firstItem="DMn-vj-kaN" firstAttribute="top" secondItem="tyW-4m-mfX" secondAttribute="top" constant="20" id="PIy-dO-uyJ"/>
                                     <constraint firstItem="DMn-vj-kaN" firstAttribute="leading" secondItem="DE7-BU-tCz" secondAttribute="trailing" constant="10" id="UDR-tw-gjI"/>
@@ -242,15 +248,15 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn (0% APY)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cg5-KV-m7c">
-                                <rect key="frame" x="20" y="453" width="374" height="21"/>
+                                <rect key="frame" x="20" y="473" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-oQ-PH0">
-                                <rect key="frame" x="20" y="482" width="374" height="124"/>
+                                <rect key="frame" x="20" y="502" width="374" height="124"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-PN-9Ul">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-PN-9Ul">
                                         <rect key="frame" x="20" y="69" width="120" height="40"/>
                                         <color key="backgroundColor" name="color_blue"/>
                                         <constraints>
@@ -259,7 +265,8 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.up" catalog="system" title="  Deposit">
+                                        <buttonConfiguration key="configuration" style="plain" title="Deposit" imagePadding="6">
+                                            <imageReference key="image" image="arrow.up" catalog="system" symbolScale="medium"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -277,7 +284,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeZ-ti-j0w">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeZ-ti-j0w">
                                         <rect key="frame" x="160" y="69" width="120" height="40"/>
                                         <color key="backgroundColor" name="color_blue"/>
                                         <constraints>
@@ -286,7 +293,8 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="arrow.down" catalog="system" title="  Withdraw">
+                                        <buttonConfiguration key="configuration" style="plain" title="Withdraw" imagePadding="6">
+                                            <imageReference key="image" image="arrow.down" catalog="system" symbolScale="medium"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
