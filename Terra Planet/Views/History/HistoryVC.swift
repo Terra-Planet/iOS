@@ -21,5 +21,9 @@ class HistoryVC: UIViewController {
             webView.load(request)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        webView.reload()
+    }
 }
 

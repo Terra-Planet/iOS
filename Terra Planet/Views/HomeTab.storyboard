@@ -20,9 +20,11 @@
                         <color key="tintColor" name="color_blue"/>
                         <color key="barTintColor" name="color_blue"/>
                         <color key="selectedImageTintColor" name="color_blue"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="YbL-1l-GBw" kind="relationship" relationship="viewControllers" id="CnC-Ll-ujO"/>
+                        <segue destination="sHI-V5-i0A" kind="relationship" relationship="viewControllers" id="Ijn-ov-Ia7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTs-4a-KGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -39,8 +41,19 @@
             </objects>
             <point key="canvasLocation" x="1186" y="-53"/>
         </scene>
+        <!--HistoryVC-->
+        <scene sceneID="M32-qD-TIU">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HistoryVC" storyboardName="History" referencedIdentifier="HistoryVC" id="sHI-V5-i0A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Transactions" image="eyeglasses" catalog="system" selectedImage="eyeglasses" id="PXm-9S-xKz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQc-Pb-7Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024" y="330"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="eyeglasses" catalog="system" width="128" height="54"/>
         <namedColor name="color_blue">
             <color red="0.10980392156862745" green="0.23137254901960785" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
