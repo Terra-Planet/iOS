@@ -34,6 +34,11 @@ class HomeVC: UIViewController {
         }
     }
     
+    @IBAction func reload(_ sender: UIButton) {
+        loadBalance()
+        loadAPY()
+    }
+    
     @IBAction func receive(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Receive", bundle: nil).instantiateViewController(withIdentifier: "ReceiveVC")
         self.present(vc, animated: true)
