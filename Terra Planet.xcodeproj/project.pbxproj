@@ -39,7 +39,6 @@
 		5933E9BA27EA19AD00C8D25D /* nodejs-project in Resources */ = {isa = PBXBuildFile; fileRef = 5933E9B927EA19AD00C8D25D /* nodejs-project */; };
 		5933E9BC27EA22DC00C8D25D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9BB27EA22DC00C8D25D /* Network.swift */; };
 		5933E9BE27EA294E00C8D25D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9BD27EA294E00C8D25D /* Balance.swift */; };
-		5933E9C027EA2B1B00C8D25D /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9BF27EA2B1B00C8D25D /* KeyChain.swift */; };
 		5933E9C227EA311200C8D25D /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933E9C127EA311200C8D25D /* KeyChainManager.swift */; };
 		596145F727EDEBFF00026427 /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596145F627EDEBFF00026427 /* Anchor.swift */; };
 		596145F927EDEC6500026427 /* AnchorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596145F827EDEC6500026427 /* AnchorActions.swift */; };
@@ -128,7 +127,6 @@
 		5933E9B927EA19AD00C8D25D /* nodejs-project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "nodejs-project"; sourceTree = "<group>"; };
 		5933E9BB27EA22DC00C8D25D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		5933E9BD27EA294E00C8D25D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		5933E9BF27EA2B1B00C8D25D /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		5933E9C127EA311200C8D25D /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 		596145F627EDEBFF00026427 /* Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
 		596145F827EDEC6500026427 /* AnchorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorActions.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 		5908BA8027EB492C00AC0ED8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5933E9BF27EA2B1B00C8D25D /* KeyChain.swift */,
 				5973AE8C27EC910F00F6F78E /* QR.swift */,
 				596145FC27EE0A8600026427 /* QR.storyboard */,
 				5923398327ECB52D00E4DF84 /* Utils.swift */,
@@ -684,7 +681,6 @@
 				59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */,
 				5933E9C227EA311200C8D25D /* KeyChainManager.swift in Sources */,
 				592FA2EA27EDE8B200955BF7 /* AnchorVC.swift in Sources */,
-				5933E9C027EA2B1B00C8D25D /* KeyChain.swift in Sources */,
 				59E2728D27EC96DD002F8C1D /* Send.swift in Sources */,
 				5973AE8D27EC910F00F6F78E /* QR.swift in Sources */,
 				596145F727EDEBFF00026427 /* Anchor.swift in Sources */,

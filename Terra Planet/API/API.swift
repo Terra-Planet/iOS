@@ -119,91 +119,119 @@ final class API {
     }
     
     func send(token: String, amount: String, address: String, callback: @escaping (_ status: Bool) -> Void) {
-        if let wallet = wallet {
-            let payload: [String:Any] = [
-                "fee_token" : "uluna",
-                "token" : token,
-                "amount" : amount,
-                "dst_addr" : address,
-                "mnemonic" : wallet.mnemonic
-            ]
-            Network.shared.post("\(local)wallet/send", data: payload) { response in
-                if response.status == 200 {
-                    callback(true)
+        KeyChainManager.shared.loadWallet { status in
+            if status {
+                if let wallet = self.wallet {
+                    let payload: [String:Any] = [
+                        "fee_token" : "uluna",
+                        "token" : token,
+                        "amount" : amount,
+                        "dst_addr" : address,
+                        "mnemonic" : wallet.mnemonic
+                    ]
+                    Network.shared.post("\(self.local)wallet/send", data: payload) { response in
+                        if response.status == 200 {
+                            callback(true)
+                        }
+                        else {
+                            callback(false)
+                        }
+                    }
                 }
                 else {
                     callback(false)
                 }
             }
-        }
-        else {
-            callback(false)
+            else {
+                callback(false)
+            }
         }
     }
     
     func swap(from: String, to: String, amount: String, callback: @escaping (_ status: Bool) -> Void) {
-        if let wallet = wallet {
-            let payload: [String:Any] = [
-                "fee_token" : "uluna",
-                "src" : from,
-                "amount" : amount,
-                "dst" : to,
-                "mnemonic" : wallet.mnemonic
-            ]
-            Network.shared.post("\(local)wallet/swap", data: payload) { response in
-                if response.status == 200 {
-                    callback(true)
+        KeyChainManager.shared.loadWallet { status in
+            if status {
+                if let wallet = self.wallet {
+                    let payload: [String:Any] = [
+                        "fee_token" : "uluna",
+                        "src" : from,
+                        "amount" : amount,
+                        "dst" : to,
+                        "mnemonic" : wallet.mnemonic
+                    ]
+                    Network.shared.post("\(self.local)wallet/swap", data: payload) { response in
+                        if response.status == 200 {
+                            callback(true)
+                        }
+                        else {
+                            callback(false)
+                        }
+                    }
                 }
                 else {
                     callback(false)
                 }
             }
-        }
-        else {
-            callback(false)
+            else {
+                callback(false)
+            }
         }
     }
     
     //MARK: Anchor
     func anchorDeposit(amount: String, callback: @escaping (_ status: Bool) -> Void) {
-        if let wallet = wallet {
-            let payload: [String:Any] = [
-                "token" : "uusd",
-                "amount" : amount,
-                "mnemonic" : wallet.mnemonic
-            ]
-            Network.shared.post("\(local)anchor/deposit", data: payload) { response in
-                if response.status == 200 {
-                    callback(true)
+        KeyChainManager.shared.loadWallet { status in
+            if status {
+                if let wallet = self.wallet {
+                    let payload: [String:Any] = [
+                        "token" : "uusd",
+                        "amount" : amount,
+                        "mnemonic" : wallet.mnemonic
+                    ]
+                    Network.shared.post("\(self.local)anchor/deposit", data: payload) { response in
+                        if response.status == 200 {
+                            callback(true)
+                        }
+                        else {
+                            callback(false)
+                        }
+                    }
                 }
                 else {
                     callback(false)
                 }
             }
-        }
-        else {
-            callback(false)
+            else {
+                callback(false)
+            }
         }
     }
     
     func anchorWithdraw(amount: String, callback: @escaping (_ status: Bool) -> Void) {
-        if let wallet = wallet {
-            let payload: [String:Any] = [
-                "token" : "uusd",
-                "amount" : amount,
-                "mnemonic" : wallet.mnemonic
-            ]
-            Network.shared.post("\(local)anchor/withdraw", data: payload) { response in
-                if response.status == 200 {
-                    callback(true)
+        KeyChainManager.shared.loadWallet { status in
+            if status {
+                if let wallet = self.wallet {
+                    let payload: [String:Any] = [
+                        "token" : "uusd",
+                        "amount" : amount,
+                        "mnemonic" : wallet.mnemonic
+                    ]
+                    Network.shared.post("\(self.local)anchor/withdraw", data: payload) { response in
+                        if response.status == 200 {
+                            callback(true)
+                        }
+                        else {
+                            callback(false)
+                        }
+                    }
                 }
                 else {
                     callback(false)
                 }
             }
-        }
-        else {
-            callback(false)
+            else {
+                callback(false)
+            }
         }
     }
     

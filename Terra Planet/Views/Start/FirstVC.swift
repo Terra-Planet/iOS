@@ -21,8 +21,8 @@ class FirstVC: UIViewController {
         if hasWallet {
             nextView = ["Home","HomeVC"]
         }
-        let vc = UIStoryboard(name: nextView[0], bundle: nil).instantiateViewController(withIdentifier: nextView[1])
         DispatchQueue.main.async {
+            let vc = UIStoryboard(name: nextView[0], bundle: nil).instantiateViewController(withIdentifier: nextView[1])
             self.present(vc, animated: false)
         }
     }

@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NodeRunner.runNode()
             }
         }
+        KeyChainManager.shared.loadWallet { status in
+            print(status)
+        }
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {

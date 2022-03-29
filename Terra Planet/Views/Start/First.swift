@@ -26,7 +26,9 @@ extension FirstVC {
     
     func loadWallet(callback: @escaping (_ hasWallet: Bool) -> Void) {
         waitServer {
-            callback(KeyChainManager.shared.loadWallet())
+            KeyChainManager.shared.loadWallet { status in
+                callback(status)
+            }
         }
     }
     

@@ -11,31 +11,83 @@ import SwiftyJSON
 final class KeyChainManager {
     static let shared = KeyChainManager()
     
+    private let service = "TerraPlanet"
+    private let account = "Account"
+    
     func saveWallet(wallet: Wallet) {
-        let json:JSON = ["address":wallet.address, "mnemonic":wallet.mnemonic]
-        var data: Data?
-        try? data = json.rawData()
-        if data != nil {
-            let status = KeyChain.save(key: "wallet", data: data!)
-            print("status: ", status)
+        let _ = deleteWallet()
+        let dic = ["address":wallet.address,"mnemonic":wallet.mnemonic]
+        let valueData: Data = NSKeyedArchiver.archivedData(withRootObject: dic)
+        let sacObject = SecAccessControlCreateWithFlags(kCFAllocatorDefault, kSecAttrAccessibleWhenUnlockedThisDeviceOnly, .userPresence, nil)!
+
+        let insert_query: NSDictionary = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccessControl: sacObject,
+            kSecValueData: valueData,
+            kSecUseAuthenticationUI: kSecUseAuthenticationUIAllow,
+            kSecAttrService: service,
+            kSecAttrAccount: account
+        ]
+        let insert_status = SecItemAdd(insert_query as CFDictionary, nil)
+        if insert_status == errSecSuccess {
+            print("Inserted successfully.")
+        }
+        else {
+            print("INSERT Error: \(insert_status).")
         }
     }
     
-    func loadWallet() -> Bool {
-        if let receivedData = KeyChain.load(key: "wallet") {
-            if let json = try? JSON(data: receivedData) {
-                print("Wallet Loaded: \(json)")
-                API.shared.wallet = Wallet(address: json["address"].stringValue, mnemonic: json["mnemonic"].stringValue, coins: [:])
-                return true
+    func loadWallet(callback: @escaping (_ status: Bool) -> Void) {
+        DispatchQueue.global().async {
+            let select_query: NSDictionary = [
+                kSecClass: kSecClassGenericPassword,
+                kSecAttrService: self.service,
+                kSecAttrAccount: self.account,
+                kSecReturnData: true,
+                kSecUseOperationPrompt: "Touch to Unlock"
+            ]
+            var extractedData: CFTypeRef?
+            let select_status = SecItemCopyMatching(select_query, &extractedData)
+            if select_status == errSecSuccess {
+                if let retrievedData = extractedData as? Data,
+                    let credentials: [String : String] = NSKeyedUnarchiver.unarchiveObject(with: retrievedData) as? [String : String] {
+                    print(credentials)
+                    if let address = credentials["address"], let mnemonic = credentials["mnemonic"] {
+                        API.shared.wallet = Wallet(address: address, mnemonic: mnemonic, coins: [:])
+                        callback(true)
+                    }
+                    else {
+                        callback(false)
+                    }
+                }
+                else {
+                    callback(false)
+                }
             }
             else {
-                print("Error loading Wallet")
-                return false
+                callback(false)
             }
         }
-        else {
-            print("No stored Wallet")
+    }
+    
+    func deleteWallet() -> Bool {
+        let delete_query: NSDictionary = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrService: service,
+            kSecAttrAccount: account,
+            kSecReturnData: false
+        ]
+        let delete_status = SecItemDelete(delete_query)
+        if delete_status == errSecSuccess {
+            print("Deleted successfully.")
+            return true
+        } else if delete_status == errSecItemNotFound {
+            print("Nothing to delete.")
+            return false
+        } else {
+            print("DELETE Error: \(delete_status).")
             return false
         }
     }
+    
 }
