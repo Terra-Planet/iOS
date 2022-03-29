@@ -19,7 +19,7 @@ class FirstVC: UIViewController {
     func redirect(hasWallet: Bool) {
         var nextView = ["Onboarding","OBNav"]
         if hasWallet {
-            nextView = ["Home","HomeVC"]
+            nextView = ["HomeTab","HomeTab"]
         }
         DispatchQueue.main.async {
             let vc = UIStoryboard(name: nextView[0], bundle: nil).instantiateViewController(withIdentifier: nextView[1])

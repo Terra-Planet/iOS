@@ -21,7 +21,7 @@ class NewWalletInfoVC: UIViewController {
     }
     
     @IBAction func `continue`(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
+        let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTab")
         present(vc, animated: false)
     }
     

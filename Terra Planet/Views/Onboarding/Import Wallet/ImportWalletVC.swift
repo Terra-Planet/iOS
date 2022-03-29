@@ -26,7 +26,7 @@ class ImportWalletVC: UIViewController, UITextViewDelegate {
         getWalletFromSeeds(seeds: seedTextview.text) { status in
             loading.dismiss(animated: true) {
                 if status {
-                    let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC")
+                    let vc = UIStoryboard(name: "HomeTab", bundle: nil).instantiateViewController(withIdentifier: "HomeTab")
                     self.present(vc, animated: false)
                 }
                 else {

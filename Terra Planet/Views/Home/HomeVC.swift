@@ -67,6 +67,9 @@ class HomeVC: UIViewController {
     }
     
     private func design() {
+        tabBarController?.tabBar.tintColor = UIColor(named: "color_blue")
+        tabBarController?.tabBar.items?[0].image = UIImage(systemName: "wallet.pass.fill")
+        tabBarController?.tabBar.items?[0].title = "Wallet"
         earnView.layer.borderWidth = 2
         earnView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
     }
