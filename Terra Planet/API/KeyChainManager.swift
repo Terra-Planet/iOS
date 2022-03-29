@@ -52,7 +52,7 @@ final class KeyChainManager {
                 if let retrievedData = extractedData as? Data,
                     let credentials: [String : String] = NSKeyedUnarchiver.unarchiveObject(with: retrievedData) as? [String : String] {
                     print(credentials)
-                    if let address = credentials["address"], let mnemonic = credentials["mnemonic"] {
+                    if let address = credentials["address"], let mnemonic = credentials["mnemonic"], !address.isEmpty, !mnemonic.isEmpty {
                         API.shared.wallet = Wallet(address: address, mnemonic: mnemonic, coins: [:])
                         callback(true)
                     }
