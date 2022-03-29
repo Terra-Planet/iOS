@@ -52,6 +52,8 @@
 		598E911227F1E7E00002B438 /* ImportWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E911127F1E7E00002B438 /* ImportWallet.swift */; };
 		59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40027EB4C3000544B62 /* Onboarding.swift */; };
 		59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */; };
+		59C2706E27F35FDE000DD19C /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2706D27F35FDE000DD19C /* History.storyboard */; };
+		59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2707027F35FF4000DD19C /* HistoryVC.swift */; };
 		59E2728827EC96A4002F8C1D /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E2728727EC96A4002F8C1D /* Send.storyboard */; };
 		59E2728B27EC96C4002F8C1D /* SendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E2728A27EC96C4002F8C1D /* SendVC.swift */; };
 		59E2728D27EC96DD002F8C1D /* Send.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E2728C27EC96DD002F8C1D /* Send.swift */; };
@@ -140,6 +142,8 @@
 		598E911127F1E7E00002B438 /* ImportWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWallet.swift; sourceTree = "<group>"; };
 		59A9E40027EB4C3000544B62 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfoVC.swift; sourceTree = "<group>"; };
+		59C2706D27F35FDE000DD19C /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		59C2707027F35FF4000DD19C /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		59E2728727EC96A4002F8C1D /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
 		59E2728A27EC96C4002F8C1D /* SendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendVC.swift; sourceTree = "<group>"; };
 		59E2728C27EC96DD002F8C1D /* Send.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Send.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				59E2728927EC96A8002F8C1D /* Send */,
 				5923398727ECB7A400E4DF84 /* Swap */,
 				592FA2E627EDE83B00955BF7 /* Anchor */,
+				59C2706F27F35FE4000DD19C /* History */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +379,15 @@
 			path = "New Wallet Into";
 			sourceTree = "<group>";
 		};
+		59C2706F27F35FE4000DD19C /* History */ = {
+			isa = PBXGroup;
+			children = (
+				59C2706D27F35FDE000DD19C /* History.storyboard */,
+				59C2707027F35FF4000DD19C /* HistoryVC.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		59E2728927EC96A8002F8C1D /* Send */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +543,7 @@
 				5921172127EB628C001E1DC0 /* HomeTab.storyboard in Resources */,
 				5933E98127EA08C500C8D25D /* Assets.xcassets in Resources */,
 				5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */,
+				59C2706E27F35FDE000DD19C /* History.storyboard in Resources */,
 				592FA2E827EDE8A400955BF7 /* Anchor.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5933E9B627EA190100C8D25D /* Wallet.swift in Sources */,
+				59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */,
 				5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */,
 				596145F927EDEC6500026427 /* AnchorActions.swift in Sources */,
 				596145FB27EE05A900026427 /* EventManager.swift in Sources */,

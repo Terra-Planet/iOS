@@ -39,6 +39,11 @@ class HomeVC: UIViewController {
         loadAPY()
     }
     
+    @IBAction func transactions(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "History", bundle: nil).instantiateViewController(withIdentifier: "HistoryVC")
+        self.present(vc, animated: true)
+    }
+    
     @IBAction func receive(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Receive", bundle: nil).instantiateViewController(withIdentifier: "ReceiveVC")
         self.present(vc, animated: true)
@@ -67,9 +72,6 @@ class HomeVC: UIViewController {
     }
     
     private func design() {
-        tabBarController?.tabBar.tintColor = UIColor(named: "color_blue")
-        tabBarController?.tabBar.items?[0].image = UIImage(systemName: "wallet.pass.fill")
-        tabBarController?.tabBar.items?[0].title = "Wallet"
         earnView.layer.borderWidth = 2
         earnView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
     }

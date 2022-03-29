@@ -34,7 +34,6 @@ extension HomeVC {
                 }
             }
         }
-
     }
     
     func loadAPY() {

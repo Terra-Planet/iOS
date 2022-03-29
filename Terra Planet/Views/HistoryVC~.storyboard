@@ -5,6 +5,8 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,11 +20,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="color_blue"/>
-                        <color key="barTintColor" name="color_blue"/>
-                        <color key="selectedImageTintColor" name="color_blue"/>
                     </tabBar>
                     <connections>
                         <segue destination="YbL-1l-GBw" kind="relationship" relationship="viewControllers" id="CnC-Ll-ujO"/>
+                        <segue destination="g6T-tC-iWN" kind="relationship" relationship="viewControllers" id="s1L-ja-XvC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTs-4a-KGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -39,10 +40,29 @@
             </objects>
             <point key="canvasLocation" x="1186" y="-53"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="lP3-zS-yaH">
+            <objects>
+                <viewController id="g6T-tC-iWN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pTE-nm-aND">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lJD-Yu-3NC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="kmp-IG-qS1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2NL-xe-xnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="436"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="color_blue">
             <color red="0.10980392156862745" green="0.23137254901960785" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

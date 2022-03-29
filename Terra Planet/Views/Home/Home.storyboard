@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Wallet-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController restorationIdentifier="HomeVC" storyboardIdentifier="HomeVC" modalPresentationStyle="currentContext" id="Y6W-OH-hqX" customClass="HomeVC" customModule="Terra_Planet" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,6 +339,21 @@
                                     <action selector="reload:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CFI-0k-SuD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7M-Z7-QDd">
+                                <rect key="frame" x="272.5" y="64" width="121.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7vy-aB-lI7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" name="color_blue"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title=" Transactions" image="eyeglasses" catalog="system">
+                                    <color key="titleColor" name="color_blue"/>
+                                </state>
+                                <connections>
+                                    <action selector="transactions:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Swm-Yz-0oo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -353,10 +368,12 @@
                             <constraint firstItem="iXa-oQ-PH0" firstAttribute="top" secondItem="cg5-KV-m7c" secondAttribute="bottom" constant="8" id="LGk-lQ-6B0"/>
                             <constraint firstItem="Flo-e6-6RA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="N2A-4Y-Y5v"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Flo-e6-6RA" secondAttribute="trailing" constant="20" id="Rf7-tP-PVO"/>
+                            <constraint firstItem="Y7M-Z7-QDd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="ZLv-bx-nQq"/>
                             <constraint firstItem="tyW-4m-mfX" firstAttribute="top" secondItem="kUb-Wp-1ej" secondAttribute="bottom" constant="8" id="cSM-1z-tKf"/>
                             <constraint firstItem="Cg3-E4-dfb" firstAttribute="top" secondItem="Flo-e6-6RA" secondAttribute="bottom" constant="8" id="dhG-Oz-HXA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tyW-4m-mfX" secondAttribute="trailing" constant="20" id="eZ9-Y0-exF"/>
                             <constraint firstItem="Cg3-E4-dfb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ebA-np-PAu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Y7M-Z7-QDd" secondAttribute="trailing" constant="20" id="fid-wg-VSL"/>
                             <constraint firstItem="Flo-e6-6RA" firstAttribute="top" secondItem="3ZH-uc-Ie3" secondAttribute="bottom" constant="40" id="hUr-Rb-Sbf"/>
                             <constraint firstItem="iXa-oQ-PH0" firstAttribute="top" secondItem="cg5-KV-m7c" secondAttribute="bottom" constant="8" id="lcd-Qc-dq1"/>
                             <constraint firstItem="IN7-Rg-Qia" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="lzM-e0-efM"/>
@@ -371,7 +388,7 @@
                             <constraint firstItem="iXa-oQ-PH0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="z2b-Fd-Lou"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Pkh-qn-foH"/>
+                    <tabBarItem key="tabBarItem" title="Wallet" image="wallet.pass" catalog="system" selectedImage="wallet.pass.fill" id="Pkh-qn-foH"/>
                     <connections>
                         <outlet property="actionsView" destination="tyW-4m-mfX" id="XQU-68-8CF"/>
                         <outlet property="anchorAPY" destination="cg5-KV-m7c" id="7ra-KP-1Lf"/>
@@ -396,8 +413,11 @@
         <image name="arrow.left.arrow.right" catalog="system" width="119" height="128"/>
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="arrow.up.right" catalog="system" width="128" height="112"/>
+        <image name="eyeglasses" catalog="system" width="128" height="54"/>
         <image name="uluna" width="64" height="64"/>
         <image name="uusd" width="64" height="64"/>
+        <image name="wallet.pass" catalog="system" width="115" height="128"/>
+        <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
         <namedColor name="color_blue">
             <color red="0.10980392156862745" green="0.23137254901960785" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
