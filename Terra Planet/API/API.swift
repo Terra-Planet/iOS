@@ -13,6 +13,7 @@ final class API {
     static let shared = API()
     
     var wallet: Wallet?
+    let net = "testnet"
     
     var lunaPrice: Double = 0
     
