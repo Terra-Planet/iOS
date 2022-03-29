@@ -10,6 +10,7 @@ import UIKit
 
 class ReceiveVC: UIViewController {
     
+    @IBOutlet weak var copiedLabel: UILabel!
     @IBOutlet weak var qr: UIImageView!
     
     override func viewDidLoad() {
@@ -17,6 +18,14 @@ class ReceiveVC: UIViewController {
     }
     
     @IBAction func copyAddress(_ sender: UIButton) {
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
         copyAddressToClipboard()
+        UIView.animate(withDuration: 0.3) {
+            self.copiedLabel.alpha = 1
+        } completion: { _ in
+            UIView.animate(withDuration: 0.3, delay: 1, options: .curveLinear) {
+                self.copiedLabel.alpha = 0
+            }
+        }
     }
 }

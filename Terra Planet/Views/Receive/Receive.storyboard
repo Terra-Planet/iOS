@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,22 +36,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-lY-Rmf">
-                                <rect key="frame" x="149.5" y="587" width="115" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Copy Address"/>
+                                <rect key="frame" x="155.5" y="587" width="103" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Copy Address"/>
                                 <connections>
                                     <action selector="copyAddress:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gs5-wX-1Il"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copied!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8d-Eg-MXS">
+                                <rect key="frame" x="172" y="64" width="70" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LpB-x6-X8P"/>
+                                    <constraint firstAttribute="width" constant="70" id="R0C-jI-qTS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="56C-bq-sXe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="8oK-pJ-2bP"/>
+                            <constraint firstItem="q8d-Eg-MXS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="C2U-g7-o8H"/>
                             <constraint firstItem="esd-yL-IM3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="GOO-Ch-2pN"/>
                             <constraint firstItem="L9c-YQ-98Z" firstAttribute="top" secondItem="56C-bq-sXe" secondAttribute="bottom" constant="10" id="Kjn-lh-FDo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="esd-yL-IM3" secondAttribute="trailing" constant="20" id="Lae-ca-ISz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="56C-bq-sXe" secondAttribute="trailing" constant="20" id="TYb-zQ-Asr"/>
+                            <constraint firstItem="q8d-Eg-MXS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="W4z-cO-70F"/>
                             <constraint firstItem="YJO-lY-Rmf" firstAttribute="top" secondItem="L9c-YQ-98Z" secondAttribute="bottom" constant="30" id="WTb-Qx-x9g"/>
                             <constraint firstItem="esd-yL-IM3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="aM2-xP-6GO"/>
                             <constraint firstItem="56C-bq-sXe" firstAttribute="top" secondItem="esd-yL-IM3" secondAttribute="bottom" constant="30" id="hkD-Dq-Ovw"/>
@@ -60,6 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="copiedLabel" destination="q8d-Eg-MXS" id="FLK-mi-xpO"/>
                         <outlet property="qr" destination="esd-yL-IM3" id="UqL-na-jOO"/>
                     </connections>
                 </viewController>
