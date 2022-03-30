@@ -11,6 +11,10 @@
 		410CBD1435E8F475EC03637D /* Pods_Terra_Planet_Terra_PlanetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02E22F51BC5FFD6B62BB0D7 /* Pods_Terra_Planet_Terra_PlanetUITests.framework */; };
 		5908BA8327EB497800AC0ED8 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */; };
 		5908BA8527EB499800AC0ED8 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */; };
+		591F1E3A27F48C9A007930A1 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3927F48C9A007930A1 /* Design.swift */; };
+		591F1E3C27F48F1F007930A1 /* GasFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3B27F48F1F007930A1 /* GasFee.swift */; };
+		591F1E3E27F48F49007930A1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3D27F48F49007930A1 /* Settings.swift */; };
+		591F1E4027F497A3007930A1 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3F27F497A3007930A1 /* StoreManager.swift */; };
 		5921171D27EB53F7001E1DC0 /* NewWalletInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */; };
 		5921171F27EB5668001E1DC0 /* First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921171E27EB5668001E1DC0 /* First.swift */; };
 		5921172127EB628C001E1DC0 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5921172027EB628C001E1DC0 /* HomeTab.storyboard */; };
@@ -54,6 +58,8 @@
 		59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */; };
 		59C2706E27F35FDE000DD19C /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2706D27F35FDE000DD19C /* History.storyboard */; };
 		59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2707027F35FF4000DD19C /* HistoryVC.swift */; };
+		59CBA33E27F484310048CA4D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CBA33D27F484310048CA4D /* Settings.storyboard */; };
+		59CBA34127F4845A0048CA4D /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CBA34027F4845A0048CA4D /* SettingsVC.swift */; };
 		59E2728827EC96A4002F8C1D /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E2728727EC96A4002F8C1D /* Send.storyboard */; };
 		59E2728B27EC96C4002F8C1D /* SendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E2728A27EC96C4002F8C1D /* SendVC.swift */; };
 		59E2728D27EC96DD002F8C1D /* Send.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E2728C27EC96DD002F8C1D /* Send.swift */; };
@@ -96,6 +102,10 @@
 		2247FF0D6B5B06A2243E5DEC /* Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig"; path = "Target Support Files/Pods-Terra Planet-Terra PlanetUITests/Pods-Terra Planet-Terra PlanetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		591F1E3927F48C9A007930A1 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		591F1E3B27F48F1F007930A1 /* GasFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasFee.swift; sourceTree = "<group>"; };
+		591F1E3D27F48F49007930A1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		591F1E3F27F497A3007930A1 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfo.swift; sourceTree = "<group>"; };
 		5921171E27EB5668001E1DC0 /* First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First.swift; sourceTree = "<group>"; };
 		5921172027EB628C001E1DC0 /* HomeTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTab.storyboard; sourceTree = "<group>"; };
@@ -144,6 +154,8 @@
 		59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfoVC.swift; sourceTree = "<group>"; };
 		59C2706D27F35FDE000DD19C /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		59C2707027F35FF4000DD19C /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		59CBA33D27F484310048CA4D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		59CBA34027F4845A0048CA4D /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		59E2728727EC96A4002F8C1D /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Send.storyboard; sourceTree = "<group>"; };
 		59E2728A27EC96C4002F8C1D /* SendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendVC.swift; sourceTree = "<group>"; };
 		59E2728C27EC96DD002F8C1D /* Send.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Send.swift; sourceTree = "<group>"; };
@@ -218,6 +230,7 @@
 				5923398727ECB7A400E4DF84 /* Swap */,
 				592FA2E627EDE83B00955BF7 /* Anchor */,
 				59C2706F27F35FE4000DD19C /* History */,
+				59CBA33F27F4843E0048CA4D /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +303,8 @@
 			children = (
 				5908BA8027EB492C00AC0ED8 /* Utils */,
 				5933E97727EA08C300C8D25D /* AppDelegate.swift */,
+				591F1E3927F48C9A007930A1 /* Design.swift */,
+				591F1E3F27F497A3007930A1 /* StoreManager.swift */,
 				5908BA8127EB493700AC0ED8 /* Views */,
 				5933E9B727EA192800C8D25D /* API */,
 				5933E9B827EA193200C8D25D /* Model */,
@@ -338,6 +353,7 @@
 				5933E9B527EA190100C8D25D /* Wallet.swift */,
 				5933E9BD27EA294E00C8D25D /* Balance.swift */,
 				596145F827EDEC6500026427 /* AnchorActions.swift */,
+				591F1E3B27F48F1F007930A1 /* GasFee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +402,16 @@
 				59C2707027F35FF4000DD19C /* HistoryVC.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		59CBA33F27F4843E0048CA4D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				59CBA33D27F484310048CA4D /* Settings.storyboard */,
+				59CBA34027F4845A0048CA4D /* SettingsVC.swift */,
+				591F1E3D27F48F49007930A1 /* Settings.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		59E2728927EC96A8002F8C1D /* Send */ = {
@@ -545,6 +571,7 @@
 				5933E97F27EA08C300C8D25D /* Main.storyboard in Resources */,
 				59C2706E27F35FDE000DD19C /* History.storyboard in Resources */,
 				592FA2E827EDE8A400955BF7 /* Anchor.storyboard in Resources */,
+				59CBA33E27F484310048CA4D /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,8 +700,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5933E9B627EA190100C8D25D /* Wallet.swift in Sources */,
+				591F1E3A27F48C9A007930A1 /* Design.swift in Sources */,
 				59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */,
 				5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */,
+				591F1E3C27F48F1F007930A1 /* GasFee.swift in Sources */,
 				596145F927EDEC6500026427 /* AnchorActions.swift in Sources */,
 				596145FB27EE05A900026427 /* EventManager.swift in Sources */,
 				5973AE8B27EC90B600F6F78E /* Receive.swift in Sources */,
@@ -690,6 +719,9 @@
 				59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */,
 				5921171D27EB53F7001E1DC0 /* NewWalletInfo.swift in Sources */,
 				5923398B27ECB7D800E4DF84 /* Swap.swift in Sources */,
+				591F1E3E27F48F49007930A1 /* Settings.swift in Sources */,
+				59CBA34127F4845A0048CA4D /* SettingsVC.swift in Sources */,
+				591F1E4027F497A3007930A1 /* StoreManager.swift in Sources */,
 				5921172427EB62CB001E1DC0 /* HomeVC.swift in Sources */,
 				5908BA8527EB499800AC0ED8 /* OnboardingVC.swift in Sources */,
 				5923398427ECB52D00E4DF84 /* Utils.swift in Sources */,

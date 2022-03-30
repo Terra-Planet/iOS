@@ -25,6 +25,7 @@
                     <connections>
                         <segue destination="YbL-1l-GBw" kind="relationship" relationship="viewControllers" id="CnC-Ll-ujO"/>
                         <segue destination="sHI-V5-i0A" kind="relationship" relationship="viewControllers" id="Ijn-ov-Ia7"/>
+                        <segue destination="fsi-fA-isy" kind="relationship" relationship="viewControllers" id="fVP-XK-LLk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTs-4a-KGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,25 +36,34 @@
         <scene sceneID="DkR-Iu-Oa8">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="HomeVC" storyboardName="Home" referencedIdentifier="HomeVC" id="YbL-1l-GBw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="psq-Ru-DLk"/>
+                    <tabBarItem key="tabBarItem" title="Wallet" id="psq-Ru-DLk"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBy-XR-cSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="-53"/>
+            <point key="canvasLocation" x="848" y="-7"/>
         </scene>
         <!--HistoryVC-->
         <scene sceneID="M32-qD-TIU">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="HistoryVC" storyboardName="History" referencedIdentifier="HistoryVC" id="sHI-V5-i0A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Transactions" image="eyeglasses" catalog="system" selectedImage="eyeglasses" id="PXm-9S-xKz"/>
+                    <tabBarItem key="tabBarItem" title="" id="PXm-9S-xKz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQc-Pb-7Ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="330"/>
+            <point key="canvasLocation" x="848" y="84"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="wYc-lN-2db">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SettingsVC" storyboardName="Settings" referencedIdentifier="SettingsVC" id="fsi-fA-isy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="g42-BB-p64"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfj-zO-L6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="849" y="165"/>
         </scene>
     </scenes>
     <resources>
-        <image name="eyeglasses" catalog="system" width="128" height="54"/>
         <namedColor name="color_blue">
             <color red="0.10980392156862745" green="0.23137254901960785" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

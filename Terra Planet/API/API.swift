@@ -14,6 +14,7 @@ final class API {
     
     var wallet: Wallet?
     let net = "testnet"
+    var gasFee: GasFee = .ust
     
     var lunaPrice: Double = 0
     
@@ -48,6 +49,17 @@ final class API {
         }
         else {
             callback(false)
+        }
+    }
+    
+    func showSeed(callback: @escaping (_ mnemonic: String?) -> Void) {
+        KeyChainManager.shared.loadWallet { status in
+            if status {
+                callback(self.wallet?.mnemonic)
+            }
+            else {
+                callback(nil)
+            }
         }
     }
     
@@ -124,7 +136,7 @@ final class API {
             if status {
                 if let wallet = self.wallet {
                     let payload: [String:Any] = [
-                        "fee_token" : "uluna",
+                        "fee_token" : self.preferredGasFeeCoin(),
                         "token" : token,
                         "amount" : amount,
                         "dst_addr" : address,
@@ -154,7 +166,7 @@ final class API {
             if status {
                 if let wallet = self.wallet {
                     let payload: [String:Any] = [
-                        "fee_token" : "uluna",
+                        "fee_token" : self.preferredGasFeeCoin(),
                         "src" : from,
                         "amount" : amount,
                         "dst" : to,
@@ -264,5 +276,14 @@ final class API {
                 callback(false)
             }
         }
+    }
+    
+    //MARK: Utils
+    private func preferredGasFeeCoin() -> String {
+        var fee_token = "uusd"
+        if self.gasFee == .luna {
+            fee_token = "uluna"
+        }
+        return fee_token
     }
 }

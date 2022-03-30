@@ -32,4 +32,10 @@ extension FirstVC {
         }
     }
     
+    func loadStoredData() {
+        StoreManager.shared.loadUserData { preferredGasFeeCoin in
+            API.shared.gasFee = preferredGasFeeCoin
+        }
+    }
+    
 }
