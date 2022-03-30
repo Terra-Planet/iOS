@@ -10,6 +10,8 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var reloadButton: UIButton!
+    
     @IBOutlet weak var actionsView: UIView!
     @IBOutlet weak var earnView: UIView!
     

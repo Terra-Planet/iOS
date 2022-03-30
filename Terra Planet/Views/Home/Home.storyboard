@@ -380,6 +380,7 @@
                         <outlet property="earnView" destination="iXa-oQ-PH0" id="umc-CH-ug1"/>
                         <outlet property="lunaAmount" destination="gnH-gD-wh3" id="NST-vS-11R"/>
                         <outlet property="lunaValue" destination="FBJ-fS-UPH" id="OoF-Cv-Zit"/>
+                        <outlet property="reloadButton" destination="bkh-rh-pbC" id="hH5-Px-txk"/>
                         <outlet property="ustAmount" destination="9qS-VW-2OH" id="NSu-0e-hgd"/>
                         <outlet property="ustValue" destination="Aa3-VD-h29" id="gHZ-2u-k9U"/>
                     </connections>

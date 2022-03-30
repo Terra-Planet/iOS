@@ -10,12 +10,11 @@ import UIKit
 
 extension HomeVC {
     func loadBalance() {
+        reloadButton.rotate()
         DispatchQueue.main.async {
-            let loading = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: .alert)
-            self.present(loading, animated: true)
             API.shared.loadCoins(reloadMarket: true) { status in
                 if status {
-                    loading.dismiss(animated: true)
+                    self.reloadButton.layer.removeAllAnimations()
                 }
                 if let wallet = API.shared.wallet { 
                     self.balance.text = "$\(wallet.balance().double2String())"
