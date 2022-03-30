@@ -67,7 +67,6 @@ class HomeVC: UIViewController {
     }
     
     private func design() {
-        earnView.layer.borderWidth = 2
-        earnView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
+        earnView.blueBorderLine()
     }
 }

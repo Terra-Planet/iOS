@@ -66,8 +66,7 @@ class AnchorVC: UIViewController, UITextFieldDelegate {
     }
     
     func design() {
-        amountView.layer.borderWidth = 2
-        amountView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
+        amountView.blueBorderLine()
     }
     
     func switchAction(action: AnchorActions) {

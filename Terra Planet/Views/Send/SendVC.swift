@@ -66,7 +66,6 @@ class SendVC: UIViewController, UITextFieldDelegate {
     }
     
     private func design() {
-        coinView.layer.borderWidth = 2
-        coinView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
+        coinView.blueBorderLine()
     }
 }

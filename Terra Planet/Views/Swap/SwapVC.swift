@@ -51,9 +51,7 @@ class SwapVC: UIViewController, UITextFieldDelegate {
     }
     
     func design() {
-        fromView.layer.borderWidth = 2
-        fromView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
-        toView.layer.borderWidth = 2
-        toView.layer.borderColor = UIColor(named: "color_blue")?.cgColor
+        fromView.blueBorderLine()
+        toView.blueBorderLine()
     }
 }
