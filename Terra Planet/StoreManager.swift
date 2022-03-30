@@ -19,7 +19,7 @@ final class StoreManager {
         UserDefaults.standard.setValue(fee_token, forKey: "gasFee")
     }
     
-    func getPreferredGasFeeCoin() -> GasFee {
+    private func getPreferredGasFeeCoin() -> GasFee {
         if let value = UserDefaults.standard.value(forKey: "gasFee") as? String {
             var fee_token: GasFee = .ust
             if value == "uluna" {
@@ -30,7 +30,37 @@ final class StoreManager {
         return .ust
     }
     
+    func setLastLunaPrice(value: Double) {
+        UserDefaults.standard.setValue(value, forKey: "lunaPrice")
+    }
+    
+    private func getLunaPrice() -> Double {
+        if let value = UserDefaults.standard.value(forKey: "lunaPrice") as? Double {
+            return value
+        }
+        else {
+            return 0
+        }
+    }
+    
+    func setBalance(coin: Balance) {
+        UserDefaults.standard.setValue(coin.amount, forKey: "balance_\(coin.coin)")
+    }
+    
+    private func getBalance() {
+        if var _ = API.shared.wallet {
+            API.shared.lunaPrice = getLunaPrice()
+            let availableCoins = ["uluna", "uusd", "anchor"]
+            for coin in availableCoins {
+                if let stored = UserDefaults.standard.value(forKey: "balance_\(coin)") as? Double {
+                    API.shared.wallet?.coins[coin] = Balance(coin: coin, amount: stored)
+                }
+            }
+        }
+    }
+    
     func loadUserData(callback: @escaping (_ preferredGasFeeCoin: GasFee) -> Void) {
+        getBalance()
         callback(getPreferredGasFeeCoin())
     }
 }

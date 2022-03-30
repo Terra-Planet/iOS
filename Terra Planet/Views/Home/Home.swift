@@ -14,8 +14,10 @@ extension HomeVC {
             let loading = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: .alert)
             self.present(loading, animated: true)
             API.shared.loadCoins(reloadMarket: true) { status in
-                loading.dismiss(animated: true)
-                if status, let wallet = API.shared.wallet {
+                if status {
+                    loading.dismiss(animated: true)
+                }
+                if let wallet = API.shared.wallet { 
                     self.balance.text = "$\(wallet.balance().double2String())"
                     for item in wallet.coins {
                         switch item.value.coin {

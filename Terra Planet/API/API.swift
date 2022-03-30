@@ -77,6 +77,7 @@ final class API {
     }
     
     func loadCoins(reloadMarket: Bool, callback: @escaping (_ status: Bool) -> Void) {
+        callback(false)
         if let wallet = wallet {
             
             func loadCoins() {
@@ -90,7 +91,9 @@ final class API {
                         for coin in native.arrayValue {
                             if self.supportedCoins.contains(coin["denom"].stringValue) {
                                 let amount = (coin["amount"].doubleValue / 1000000)
-                                self.wallet?.coins[coin["denom"].stringValue] = Balance(coin: coin["denom"].stringValue, amount: amount)
+                                let balance = Balance(coin: coin["denom"].stringValue, amount: amount)
+                                StoreManager.shared.setBalance(coin: balance)
+                                self.wallet?.coins[coin["denom"].stringValue] = balance
                             }
                         }
                         terra = true
@@ -103,7 +106,9 @@ final class API {
                 //MARK: Get Anchor Balance
                 Network.shared.post("\(local)anchor/balance", data: ["mnemonic":wallet.mnemonic]) { response in
                     if response.status == 200 {
-                        self.wallet?.coins["anchor"] = Balance(coin: "anchor", amount: response.data["total_deposit_balance_in_ust"].doubleValue)
+                        let balance = Balance(coin: "anchor", amount: response.data["total_deposit_balance_in_ust"].doubleValue)
+                        StoreManager.shared.setBalance(coin: balance)
+                        self.wallet?.coins["anchor"] = balance
                         anchor = true
                         if terra {
                             callback(true)
@@ -268,8 +273,8 @@ final class API {
     func prices(callback: @escaping (_ status: Bool) -> Void) {
         Network.shared.get("\(local)market/rate/uluna/uusd") { response in
             if response.status == 200 {
-                print(response.data)
                 self.lunaPrice = response.data["amount"].doubleValue
+                StoreManager.shared.setLastLunaPrice(value: self.lunaPrice)
                 callback(true)
             }
             else {
