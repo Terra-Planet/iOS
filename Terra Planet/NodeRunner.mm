@@ -16,11 +16,7 @@
 + (void) startEngine
 {
     NSString* srcPath = [[NSBundle mainBundle] pathForResource:@"nodejs-project/bin/www" ofType:@""];
-    NSArray* arguments = [NSArray arrayWithObjects:
-                                @"node",
-                                srcPath,
-                                nil
-                                ];
+    NSArray* arguments = [NSArray arrayWithObjects: @"node",srcPath,nil];
     int c_arguments_size=0;
     
     //Compute byte size need for all arguments in contiguous memory.
