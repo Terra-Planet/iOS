@@ -28,7 +28,7 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func changeGas(_ sender: UISegmentedControl) {
-        var coin: GasFee = .ust
+        var coin: FeeCoin = .ust
         if gasSelector.selectedSegmentIndex == 1 {
             coin = .luna
         }

@@ -12,7 +12,7 @@
 		5908BA8327EB497800AC0ED8 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */; };
 		5908BA8527EB499800AC0ED8 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */; };
 		591F1E3A27F48C9A007930A1 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3927F48C9A007930A1 /* Design.swift */; };
-		591F1E3C27F48F1F007930A1 /* GasFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3B27F48F1F007930A1 /* GasFee.swift */; };
+		591F1E3C27F48F1F007930A1 /* FeeCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3B27F48F1F007930A1 /* FeeCoin.swift */; };
 		591F1E3E27F48F49007930A1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3D27F48F49007930A1 /* Settings.swift */; };
 		591F1E4027F497A3007930A1 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591F1E3F27F497A3007930A1 /* StoreManager.swift */; };
 		5921171D27EB53F7001E1DC0 /* NewWalletInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */; };
@@ -48,6 +48,7 @@
 		596145F927EDEC6500026427 /* AnchorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596145F827EDEC6500026427 /* AnchorActions.swift */; };
 		596145FB27EE05A900026427 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596145FA27EE05A900026427 /* EventManager.swift */; };
 		596145FD27EE0A8600026427 /* QR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596145FC27EE0A8600026427 /* QR.storyboard */; };
+		5972CDE227FCD6A3008BD643 /* PreviewFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972CDE127FCD6A3008BD643 /* PreviewFee.swift */; };
 		5973AE8627EC906300F6F78E /* Receive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5973AE8527EC906300F6F78E /* Receive.storyboard */; };
 		5973AE8927EC909600F6F78E /* ReceiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973AE8827EC909600F6F78E /* ReceiveVC.swift */; };
 		5973AE8B27EC90B600F6F78E /* Receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973AE8A27EC90B600F6F78E /* Receive.swift */; };
@@ -56,6 +57,7 @@
 		598E911227F1E7E00002B438 /* ImportWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E911127F1E7E00002B438 /* ImportWallet.swift */; };
 		59A9E40127EB4C3000544B62 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40027EB4C3000544B62 /* Onboarding.swift */; };
 		59A9E40427EB52B200544B62 /* NewWalletInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */; };
+		59B411B627F724B5008C5423 /* PreviewTX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B411B527F724B5008C5423 /* PreviewTX.swift */; };
 		59C2706E27F35FDE000DD19C /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C2706D27F35FDE000DD19C /* History.storyboard */; };
 		59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2707027F35FF4000DD19C /* HistoryVC.swift */; };
 		59CBA33E27F484310048CA4D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59CBA33D27F484310048CA4D /* Settings.storyboard */; };
@@ -103,7 +105,7 @@
 		5908BA8227EB497800AC0ED8 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		5908BA8427EB499800AC0ED8 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		591F1E3927F48C9A007930A1 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
-		591F1E3B27F48F1F007930A1 /* GasFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasFee.swift; sourceTree = "<group>"; };
+		591F1E3B27F48F1F007930A1 /* FeeCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeeCoin.swift; sourceTree = "<group>"; };
 		591F1E3D27F48F49007930A1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		591F1E3F27F497A3007930A1 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		5921171C27EB53F7001E1DC0 /* NewWalletInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfo.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		596145F827EDEC6500026427 /* AnchorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorActions.swift; sourceTree = "<group>"; };
 		596145FA27EE05A900026427 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		596145FC27EE0A8600026427 /* QR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QR.storyboard; sourceTree = "<group>"; };
+		5972CDE127FCD6A3008BD643 /* PreviewFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFee.swift; sourceTree = "<group>"; };
 		5973AE8527EC906300F6F78E /* Receive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Receive.storyboard; sourceTree = "<group>"; };
 		5973AE8827EC909600F6F78E /* ReceiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveVC.swift; sourceTree = "<group>"; };
 		5973AE8A27EC90B600F6F78E /* Receive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receive.swift; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 		598E911127F1E7E00002B438 /* ImportWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportWallet.swift; sourceTree = "<group>"; };
 		59A9E40027EB4C3000544B62 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		59A9E40327EB52B200544B62 /* NewWalletInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWalletInfoVC.swift; sourceTree = "<group>"; };
+		59B411B527F724B5008C5423 /* PreviewTX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTX.swift; sourceTree = "<group>"; };
 		59C2706D27F35FDE000DD19C /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		59C2707027F35FF4000DD19C /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		59CBA33D27F484310048CA4D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -351,9 +355,11 @@
 			isa = PBXGroup;
 			children = (
 				5933E9B527EA190100C8D25D /* Wallet.swift */,
+				59B411B527F724B5008C5423 /* PreviewTX.swift */,
+				5972CDE127FCD6A3008BD643 /* PreviewFee.swift */,
 				5933E9BD27EA294E00C8D25D /* Balance.swift */,
 				596145F827EDEC6500026427 /* AnchorActions.swift */,
-				591F1E3B27F48F1F007930A1 /* GasFee.swift */,
+				591F1E3B27F48F1F007930A1 /* FeeCoin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,10 +706,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5933E9B627EA190100C8D25D /* Wallet.swift in Sources */,
+				5972CDE227FCD6A3008BD643 /* PreviewFee.swift in Sources */,
 				591F1E3A27F48C9A007930A1 /* Design.swift in Sources */,
 				59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */,
 				5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */,
-				591F1E3C27F48F1F007930A1 /* GasFee.swift in Sources */,
+				591F1E3C27F48F1F007930A1 /* FeeCoin.swift in Sources */,
+				59B411B627F724B5008C5423 /* PreviewTX.swift in Sources */,
 				596145F927EDEC6500026427 /* AnchorActions.swift in Sources */,
 				596145FB27EE05A900026427 /* EventManager.swift in Sources */,
 				5973AE8B27EC90B600F6F78E /* Receive.swift in Sources */,

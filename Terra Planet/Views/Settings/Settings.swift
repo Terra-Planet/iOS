@@ -9,7 +9,7 @@ import Foundation
 
 extension SettingsVC {
     
-    func savePreferredGasFeeCoin(coin: GasFee) {
+    func savePreferredGasFeeCoin(coin: FeeCoin) {
         API.shared.gasFee = coin
         StoreManager.shared.setPreferredGasFeeCoin(coin: coin)
     }

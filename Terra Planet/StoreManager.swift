@@ -11,7 +11,7 @@ final class StoreManager {
     
     static let shared = StoreManager()
     
-    func setPreferredGasFeeCoin(coin: GasFee) {
+    func setPreferredGasFeeCoin(coin: FeeCoin) {
         var fee_token = "uusd"
         if coin == .luna {
             fee_token = "uluna"
@@ -19,9 +19,9 @@ final class StoreManager {
         UserDefaults.standard.setValue(fee_token, forKey: "gasFee")
     }
     
-    private func getPreferredGasFeeCoin() -> GasFee {
+    private func getPreferredGasFeeCoin() -> FeeCoin {
         if let value = UserDefaults.standard.value(forKey: "gasFee") as? String {
-            var fee_token: GasFee = .ust
+            var fee_token: FeeCoin = .ust
             if value == "uluna" {
                 fee_token = .luna
             }
@@ -59,7 +59,7 @@ final class StoreManager {
         }
     }
     
-    func loadUserData(callback: @escaping (_ preferredGasFeeCoin: GasFee) -> Void) {
+    func loadUserData(callback: @escaping (_ preferredGasFeeCoin: FeeCoin) -> Void) {
         getBalance()
         callback(getPreferredGasFeeCoin())
     }
