@@ -58,6 +58,14 @@ extension SwapVC {
         }
     }
     
+    func swapPreview(callback: @escaping (_ preview: PreviewTX?) -> Void) {
+        if let amount = fromAmount.text {
+            API.shared.swapPreview(from: from, to: to, amount: amount) { preview in
+                callback(preview)
+            }
+        }
+    }
+    
     func swap(callback: @escaping (_ status: Bool) -> Void) {
         if let amount = fromAmount.text {
             API.shared.swap(from: from, to: to, amount: amount) { status in

@@ -20,6 +20,8 @@ class SendVC: UIViewController, UITextFieldDelegate {
     var coin = "uluna"
     var balance: Double = 0
     
+    let loading = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: .alert)
+    
     override func viewDidLoad() {
         design()
         setCoin(coin: "uluna")
@@ -54,15 +56,34 @@ class SendVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func send(_ sender: UIButton) {
         if let amount = amount.text, let address = address.text {
-            let loading = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: .alert)
             present(loading, animated: true)
-            sendCoin(coin: coin, amount: amount, address: address) { status in
+            sendCoinPreview(coin: coin, amount: amount, address: address) { preview in
+                self.loading.dismiss(animated: true) {
+                    if let preview = preview {
+                        self.showPreview(preview: preview)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func showPreview(preview: PreviewTX) {
+        var alertText = "From: \(preview.from.coinCode2Name())\n\nTo: \(preview.to.coinCode2Name())\n\nAmount:\(preview.amount)\n\nFee: \(preview.fee.amount.legibleAmount()) \(preview.fee.coin.coinCode2Name())"
+        if API.shared.gasFee == .luna {
+            alertText += " ($\(preview.fee.usdFee().double2String()) usd)"
+        }
+        let alert = UIAlertController(title: "SEND", message: alertText, preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Sign it!", style: .default) { _ in
+            self.present(self.loading, animated: true)
+            self.sendCoin(coin: self.coin, amount: self.amount.text!, address: self.address.text!) { status in
                 Utils.shared.events.trigger("reloadBalance")
-                loading.dismiss(animated: true)
+                self.loading.dismiss(animated: true)
                 self.dismiss(animated: true)
             }
         }
-        
+        alert.addAction(yes)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
     }
     
     private func design() {

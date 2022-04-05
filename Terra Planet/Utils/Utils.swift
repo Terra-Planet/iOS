@@ -18,6 +18,20 @@ extension Double {
     func double2String() -> String {
         return String(format: "%.2f", self)
     }
+    
+    func legibleAmount() -> Double {
+        return self / 1000000
+    }
+}
+
+extension String {
+    func coinCode2Name() -> String {
+        switch self {
+        case "uluna": return "LUNA"
+        case "uusd": return "UST"
+        default: return self
+        }
+    }
 }
 
 extension UIView {

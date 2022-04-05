@@ -14,7 +14,7 @@ final class API {
     
     var wallet: Wallet?
     let net = "testnet"
-    var gasFee: GasFee = .ust
+    var gasFee: FeeCoin = .ust
     
     var lunaPrice: Double = 0
     
@@ -135,6 +135,29 @@ final class API {
             callback(false)
         }
     }
+
+    func sendPreview(token: String, amount: String, address: String, callback: @escaping (_ preview: PreviewTX?) -> Void) {
+        if let wallet = wallet {
+            let payload: [String:Any] = [
+                "fee_token" : self.preferredGasFeeCoin(),
+                "token" : token,
+                "amount" : amount,
+                "dst_addr" : address,
+                "mnemonic" : wallet.mnemonic
+            ]
+            Network.shared.post("\(self.local)wallet/send/preview", data: payload) { response in
+                if response.status == 200 {
+                    let message = JSON(parseJSON: response.data["body"]["messages"][0].stringValue)
+                    let fee_info = JSON(parseJSON: response.data["auth_info"]["fee"].stringValue)
+                    let fee = PreviewFee(coin: fee_info["amount"][0]["denom"].stringValue, amount: fee_info["amount"][0]["amount"].doubleValue)
+                    callback(PreviewTX(from: message["from_address"].stringValue, to: message["to_address"].stringValue, amount: message["amount"][0]["amount"].doubleValue.legibleAmount(), fee: fee))
+                }
+                else {
+                    callback(nil)
+                }
+            }
+        }
+    }
     
     func send(token: String, amount: String, address: String, callback: @escaping (_ status: Bool) -> Void) {
         KeyChainManager.shared.loadWallet { status in
@@ -163,6 +186,32 @@ final class API {
             else {
                 callback(false)
             }
+        }
+    }
+    
+    func swapPreview(from: String, to: String, amount: String, callback: @escaping (_ preview: PreviewTX?) -> Void) {
+        if let wallet = wallet {
+            let payload: [String:Any] = [
+                "fee_token" : self.preferredGasFeeCoin(),
+                "src" : from,
+                "amount" : amount,
+                "dst" : to,
+                "mnemonic" : wallet.mnemonic
+            ]
+            Network.shared.post("\(self.local)wallet/swap/preview", data: payload) { response in
+                if response.status == 200 {
+                    let message = JSON(parseJSON: response.data["body"]["messages"][0].stringValue)
+                    let fee_info = JSON(parseJSON: response.data["auth_info"]["fee"].stringValue)
+                    let fee = PreviewFee(coin: fee_info["amount"][0]["denom"].stringValue, amount: fee_info["amount"][0]["amount"].doubleValue)
+                    callback(PreviewTX(from: message["offer_coin"]["denom"].stringValue, to: message["ask_denom"].stringValue, amount: message["offer_coin"]["amount"].doubleValue, fee: fee))
+                }
+                else {
+                    callback(nil)
+                }
+            }
+        }
+        else {
+            callback(nil)
         }
     }
     

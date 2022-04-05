@@ -41,6 +41,12 @@ extension SendVC {
         self.coin = coin
         self.amount.text = "0"
     }
+        
+    func sendCoinPreview(coin: String, amount: String, address: String, callback: @escaping (_ preview: PreviewTX?) -> Void) {
+        API.shared.sendPreview(token: coin, amount: amount, address: address) { status in
+            callback(status)
+        }
+    }
     
     func sendCoin(coin: String, amount: String, address: String, callback: @escaping (_ status: Bool) -> Void) {
         API.shared.send(token: coin, amount: amount, address: address) { status in
