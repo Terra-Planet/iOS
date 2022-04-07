@@ -15,15 +15,14 @@ class HistoryVC: UIViewController {
     
     override func viewDidLoad() {
         view = webView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let wallet = API.shared.wallet {
             let url = URL(string: "https://finder.terra.money/\(API.shared.net)/address/\(wallet.address)")
             let request = URLRequest(url: url!)
             webView.load(request)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        webView.reload()
     }
 }
 
