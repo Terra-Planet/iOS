@@ -48,6 +48,8 @@
 		596145F927EDEC6500026427 /* AnchorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596145F827EDEC6500026427 /* AnchorActions.swift */; };
 		596145FB27EE05A900026427 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596145FA27EE05A900026427 /* EventManager.swift */; };
 		596145FD27EE0A8600026427 /* QR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596145FC27EE0A8600026427 /* QR.storyboard */; };
+		596A5D5227FF47740087AF8D /* BlockScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596A5D5127FF47740087AF8D /* BlockScreen.storyboard */; };
+		596A5D5527FF47A80087AF8D /* BlockScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A5D5427FF47A80087AF8D /* BlockScreenVC.swift */; };
 		5972CDE227FCD6A3008BD643 /* PreviewFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5972CDE127FCD6A3008BD643 /* PreviewFee.swift */; };
 		5973AE8627EC906300F6F78E /* Receive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5973AE8527EC906300F6F78E /* Receive.storyboard */; };
 		5973AE8927EC909600F6F78E /* ReceiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973AE8827EC909600F6F78E /* ReceiveVC.swift */; };
@@ -146,6 +148,8 @@
 		596145F827EDEC6500026427 /* AnchorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorActions.swift; sourceTree = "<group>"; };
 		596145FA27EE05A900026427 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		596145FC27EE0A8600026427 /* QR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QR.storyboard; sourceTree = "<group>"; };
+		596A5D5127FF47740087AF8D /* BlockScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BlockScreen.storyboard; sourceTree = "<group>"; };
+		596A5D5427FF47A80087AF8D /* BlockScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockScreenVC.swift; sourceTree = "<group>"; };
 		5972CDE127FCD6A3008BD643 /* PreviewFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewFee.swift; sourceTree = "<group>"; };
 		5973AE8527EC906300F6F78E /* Receive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Receive.storyboard; sourceTree = "<group>"; };
 		5973AE8827EC909600F6F78E /* ReceiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveVC.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				592FA2E627EDE83B00955BF7 /* Anchor */,
 				59C2706F27F35FE4000DD19C /* History */,
 				59CBA33F27F4843E0048CA4D /* Settings */,
+				596A5D5327FF477D0087AF8D /* Block Screen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +367,15 @@
 				591F1E3B27F48F1F007930A1 /* FeeCoin.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		596A5D5327FF477D0087AF8D /* Block Screen */ = {
+			isa = PBXGroup;
+			children = (
+				596A5D5127FF47740087AF8D /* BlockScreen.storyboard */,
+				596A5D5427FF47A80087AF8D /* BlockScreenVC.swift */,
+			);
+			path = "Block Screen";
 			sourceTree = "<group>";
 		};
 		5973AE8727EC907400F6F78E /* Receive */ = {
@@ -570,6 +584,7 @@
 				59E2728827EC96A4002F8C1D /* Send.storyboard in Resources */,
 				5908BA8327EB497800AC0ED8 /* Onboarding.storyboard in Resources */,
 				5933E9BA27EA19AD00C8D25D /* nodejs-project in Resources */,
+				596A5D5227FF47740087AF8D /* BlockScreen.storyboard in Resources */,
 				5973AE8627EC906300F6F78E /* Receive.storyboard in Resources */,
 				596145FD27EE0A8600026427 /* QR.storyboard in Resources */,
 				5921172127EB628C001E1DC0 /* HomeTab.storyboard in Resources */,
@@ -707,6 +722,7 @@
 			files = (
 				5933E9B627EA190100C8D25D /* Wallet.swift in Sources */,
 				5972CDE227FCD6A3008BD643 /* PreviewFee.swift in Sources */,
+				596A5D5527FF47A80087AF8D /* BlockScreenVC.swift in Sources */,
 				591F1E3A27F48C9A007930A1 /* Design.swift in Sources */,
 				59C2707127F35FF4000DD19C /* HistoryVC.swift in Sources */,
 				5933E97C27EA08C300C8D25D /* FirstVC.swift in Sources */,

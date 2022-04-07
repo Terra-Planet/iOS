@@ -36,7 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         KeyChainManager.shared.loadWallet { status in
-            print(status)
+            if !status {
+                DispatchQueue.main.sync {
+                    let vc = UIStoryboard(name: "BlockScreen", bundle: nil).instantiateViewController(withIdentifier: "BlockScreenVC")
+                    UIApplication.topViewController()!.present(vc, animated: false)
+                }
+            }
         }
     }
     
