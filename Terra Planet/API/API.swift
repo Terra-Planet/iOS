@@ -76,9 +76,12 @@ final class API {
         }
     }
     
-    func loadCoins(reloadMarket: Bool, callback: @escaping (_ status: Bool) -> Void) {
+    func loadCoins(callback: @escaping (_ status: Bool) -> Void) {
         callback(false)
         if let wallet = wallet {
+            
+            self.wallet?.coins = [:]
+            StoreManager.shared.deleteBalance()
             
             func loadCoins() {
                 var terra = false
@@ -117,18 +120,13 @@ final class API {
                 }
             }
             
-            if reloadMarket {
-                prices { status in
-                    if status {
-                        loadCoins()
-                    }
-                    else {
-                        callback(false)
-                    }
+            prices { status in
+                if status {
+                    loadCoins()
                 }
-            }
-            else {
-                loadCoins()
+                else {
+                    callback(false)
+                }
             }
         }
         else {
@@ -345,5 +343,10 @@ final class API {
             fee_token = "uluna"
         }
         return fee_token
+    }
+    
+    func savePreferredGasFeeCoin(coin: FeeCoin) {
+        API.shared.gasFee = coin
+        StoreManager.shared.setPreferredGasFeeCoin(coin: coin)
     }
 }

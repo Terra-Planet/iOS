@@ -11,6 +11,8 @@ final class StoreManager {
     
     static let shared = StoreManager()
     
+    private let availableCoins = ["uluna", "uusd", "anchor"]
+    
     func setPreferredGasFeeCoin(coin: FeeCoin) {
         var fee_token = "uusd"
         if coin == .luna {
@@ -47,10 +49,15 @@ final class StoreManager {
         UserDefaults.standard.setValue(coin.amount, forKey: "balance_\(coin.coin)")
     }
     
+    func deleteBalance() {
+        for coin in availableCoins {
+            UserDefaults.standard.setValue(nil, forKey: "balance_\(coin)")
+        }
+    }
+    
     private func getBalance() {
         if var _ = API.shared.wallet {
             API.shared.lunaPrice = getLunaPrice()
-            let availableCoins = ["uluna", "uusd", "anchor"]
             for coin in availableCoins {
                 if let stored = UserDefaults.standard.value(forKey: "balance_\(coin)") as? Double {
                     API.shared.wallet?.coins[coin] = Balance(coin: coin, amount: stored)

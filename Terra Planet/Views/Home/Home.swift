@@ -12,12 +12,17 @@ extension HomeVC {
     func loadBalance() {
         reloadButton.rotate()
         DispatchQueue.main.async {
-            API.shared.loadCoins(reloadMarket: true) { status in
+            API.shared.loadCoins() { status in
                 if status {
                     self.reloadButton.layer.removeAllAnimations()
                 }
-                if let wallet = API.shared.wallet { 
+                if let wallet = API.shared.wallet {
                     self.balance.text = "$\(wallet.balance().double2String())"
+                    self.lunaAmount.text = "0"
+                    self.lunaValue.text = "$0"
+                    self.ustAmount.text = "0"
+                    self.ustValue.text = "$0"
+                    self.anchorValue.text = "$0"
                     for item in wallet.coins {
                         switch item.value.coin {
                         case "uluna":
