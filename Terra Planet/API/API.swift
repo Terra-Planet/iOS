@@ -136,15 +136,18 @@ final class API {
         }
     }
 
-    func sendPreview(token: String, amount: String, address: String, callback: @escaping (_ preview: PreviewTX?) -> Void) {
+    func sendPreview(token: String, amount: String, address: String, memo: String?, callback: @escaping (_ preview: PreviewTX?) -> Void) {
         if let wallet = wallet {
-            let payload: [String:Any] = [
+            var payload: [String:Any] = [
                 "fee_token" : self.preferredGasFeeCoin(),
                 "token" : token,
                 "amount" : amount,
                 "dst_addr" : address,
                 "mnemonic" : wallet.mnemonic
             ]
+            if let memo = memo, memo != "" {
+                payload["memo"] = memo
+            }
             Network.shared.post("\(self.local)wallet/send/preview", data: payload) { response in
                 if response.status == 200 {
                     let message = JSON(parseJSON: response.data["body"]["messages"][0].stringValue)
@@ -159,17 +162,20 @@ final class API {
         }
     }
     
-    func send(token: String, amount: String, address: String, callback: @escaping (_ status: Bool) -> Void) {
+    func send(token: String, amount: String, address: String, memo: String?, callback: @escaping (_ status: Bool) -> Void) {
         KeyChainManager.shared.loadWallet { status in
             if status {
                 if let wallet = self.wallet {
-                    let payload: [String:Any] = [
+                    var payload: [String:Any] = [
                         "fee_token" : self.preferredGasFeeCoin(),
                         "token" : token,
                         "amount" : amount,
                         "dst_addr" : address,
                         "mnemonic" : wallet.mnemonic
                     ]
+                    if let memo = memo, memo != "" {
+                        payload["memo"] = memo
+                    }
                     Network.shared.post("\(self.local)wallet/send", data: payload) { response in
                         if response.status == 200 {
                             callback(true)
