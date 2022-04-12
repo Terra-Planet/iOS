@@ -10,8 +10,7 @@ import Foundation
 extension SettingsVC {
     
     func savePreferredGasFeeCoin(coin: FeeCoin) {
-        API.shared.gasFee = coin
-        StoreManager.shared.setPreferredGasFeeCoin(coin: coin)
+        API.shared.savePreferredGasFeeCoin(coin: coin)
     }
     
     func getSeed(callback: @escaping (_ mnemonic: String?) -> Void) {

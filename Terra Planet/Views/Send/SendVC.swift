@@ -61,6 +61,10 @@ class SendVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func send(_ sender: UIButton) {
+        sendPreview()
+    }
+    
+    private func sendPreview() {
         if let amount = amount.text, let address = address.text {
             present(loading, animated: true)
             sendCoinPreview(coin: coin, amount: amount, address: address, memo: memo.text) { preview in
@@ -74,6 +78,38 @@ class SendVC: UIViewController, UITextFieldDelegate {
     }
     
     private func showPreview(preview: PreviewTX) {
+        if let amount = amount.text, let amountToDouble = Double(amount) {
+            if preview.fee.coin == "uluna" {
+                if let lunaBalance = API.shared.wallet?.coins["uluna"]?.amount {
+                    var totalAmount = preview.fee.amount.legibleAmount()
+                    if coinName.text == "LUNA" {
+                        totalAmount += amountToDouble
+                    }
+                    if totalAmount > lunaBalance {
+                        return notEnoughFee(switchTo: .ust)
+                    }
+                }
+                else {
+                    return notEnoughFee(switchTo: .ust)
+                }
+            }
+            else {
+                if let ustBalance = API.shared.wallet?.coins["uusd"]?.amount {
+                    var totalAmount = preview.fee.amount.legibleAmount()
+                    if coinName.text == "UST" {
+                        totalAmount += amountToDouble
+                    }
+                    if totalAmount > ustBalance {
+                        return notEnoughFee(switchTo: .luna)
+                    }
+                }
+                else {
+                    return notEnoughFee(switchTo: .luna)
+                }
+            }
+        }
+        
+        
         var alertText = "From: \(preview.from.coinCode2Name())\n\nTo: \(preview.to.coinCode2Name())\n\nAmount:\(preview.amount)\n\nFee: \(preview.fee.amount.legibleAmount()) \(preview.fee.coin.coinCode2Name())"
         if API.shared.gasFee == .luna {
             alertText += " ($\(preview.fee.usdFee().double2String()) usd)"
@@ -86,6 +122,24 @@ class SendVC: UIViewController, UITextFieldDelegate {
                 self.loading.dismiss(animated: true)
                 self.dismiss(animated: true)
             }
+        }
+        alert.addAction(yes)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    private func notEnoughFee(switchTo: FeeCoin) {
+        var currentCoinName = "LUNA"
+        var newCoinName = "UST"
+        if switchTo == .luna {
+            currentCoinName = "UST"
+            newCoinName = "LUNA"
+        }
+
+        let alert = UIAlertController(title: "Not enough \(currentCoinName) for fees", message: "Do you want switch fees to \(newCoinName)?", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "Yes", style: .default) { _ in
+            API.shared.savePreferredGasFeeCoin(coin: switchTo)
+            self.sendPreview()
         }
         alert.addAction(yes)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))

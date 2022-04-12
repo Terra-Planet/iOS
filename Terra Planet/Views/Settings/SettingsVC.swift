@@ -15,6 +15,9 @@ class SettingsVC: UIViewController {
     
     override func viewDidLoad() {
         design()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         setSelector()
     }
     
