@@ -134,7 +134,7 @@ final class API {
         }
     }
 
-    func sendPreview(token: String, amount: String, address: String, memo: String?, callback: @escaping (_ preview: PreviewTX?) -> Void) {
+    func sendPreview(token: String, amount: String, address: String, memo: String?, callback: @escaping (_ preview: PreviewTX?,_ errorMessage: String?) -> Void) {
         if let wallet = wallet {
             var payload: [String:Any] = [
                 "fee_token" : self.preferredGasFeeCoin(),
@@ -151,16 +151,19 @@ final class API {
                     let message = JSON(parseJSON: response.data["body"]["messages"][0].stringValue)
                     let fee_info = JSON(parseJSON: response.data["auth_info"]["fee"].stringValue)
                     let fee = PreviewFee(coin: fee_info["amount"][0]["denom"].stringValue, amount: fee_info["amount"][0]["amount"].doubleValue)
-                    callback(PreviewTX(from: message["from_address"].stringValue, to: message["to_address"].stringValue, amount: message["amount"][0]["amount"].doubleValue.legibleAmount(), fee: fee))
+                    callback(PreviewTX(from: message["from_address"].stringValue, to: message["to_address"].stringValue, amount: message["amount"][0]["amount"].doubleValue.legibleAmount(), fee: fee), nil)
                 }
                 else {
-                    callback(nil)
+                    callback(nil, "Unknown Error, please try again")
                 }
             }
         }
+        else {
+            callback(nil, "Wallet not found")
+        }
     }
     
-    func send(token: String, amount: String, address: String, memo: String?, callback: @escaping (_ status: Bool) -> Void) {
+    func send(token: String, amount: String, address: String, memo: String?, callback: @escaping (_ errorMessage: String?) -> Void) {
         KeyChainManager.shared.loadWallet { status in
             if status {
                 if let wallet = self.wallet {
@@ -176,24 +179,32 @@ final class API {
                     }
                     Network.shared.post("\(self.local)wallet/send", data: payload) { response in
                         if response.status == 200 {
-                            callback(true)
+                            callback(nil)
+                        }
+                        else if response.status == 400 {
+                            if response.data["result"]["raw_log"].stringValue != "" {
+                                callback(response.data["result"]["raw_log"].stringValue)
+                            }
+                            else {
+                                callback("Unknown Error, please try again")
+                            }
                         }
                         else {
-                            callback(false)
+                            callback("Unknown Error, please try again")
                         }
                     }
                 }
                 else {
-                    callback(false)
+                    callback("Wallet not found")
                 }
             }
             else {
-                callback(false)
+                callback("Wallet not found")
             }
         }
     }
     
-    func swapPreview(from: String, to: String, amount: String, callback: @escaping (_ preview: PreviewTX?) -> Void) {
+    func swapPreview(from: String, to: String, amount: String, callback: @escaping (_ preview: PreviewTX?,_ errorMessage: String?) -> Void) {
         if let wallet = wallet {
             let payload: [String:Any] = [
                 "fee_token" : self.preferredGasFeeCoin(),
@@ -207,19 +218,19 @@ final class API {
                     let message = JSON(parseJSON: response.data["body"]["messages"][0].stringValue)
                     let fee_info = JSON(parseJSON: response.data["auth_info"]["fee"].stringValue)
                     let fee = PreviewFee(coin: fee_info["amount"][0]["denom"].stringValue, amount: fee_info["amount"][0]["amount"].doubleValue)
-                    callback(PreviewTX(from: message["offer_coin"]["denom"].stringValue, to: message["ask_denom"].stringValue, amount: message["offer_coin"]["amount"].doubleValue, fee: fee))
+                    callback(PreviewTX(from: message["offer_coin"]["denom"].stringValue, to: message["ask_denom"].stringValue, amount: message["offer_coin"]["amount"].doubleValue, fee: fee), nil)
                 }
                 else {
-                    callback(nil)
+                    callback(nil, "Unknown Error, please try again")
                 }
             }
         }
         else {
-            callback(nil)
+            callback(nil, "Wallet not found")
         }
     }
     
-    func swap(from: String, to: String, amount: String, callback: @escaping (_ status: Bool) -> Void) {
+    func swap(from: String, to: String, amount: String, callback: @escaping (_ errorMessage: String?) -> Void) {
         KeyChainManager.shared.loadWallet { status in
             if status {
                 if let wallet = self.wallet {
@@ -232,19 +243,27 @@ final class API {
                     ]
                     Network.shared.post("\(self.local)wallet/swap", data: payload) { response in
                         if response.status == 200 {
-                            callback(true)
+                            callback(nil)
+                        }
+                        else if response.status == 400 {
+                            if response.data["result"]["raw_log"].stringValue != "" {
+                                callback(response.data["result"]["raw_log"].stringValue)
+                            }
+                            else {
+                                callback("Unknown Error, please try again")
+                            }
                         }
                         else {
-                            callback(false)
+                            callback("Unknown Error, please try again")
                         }
                     }
                 }
                 else {
-                    callback(false)
+                    callback("Wallet not found")
                 }
             }
             else {
-                callback(false)
+                callback("Wallet not found")
             }
         }
     }

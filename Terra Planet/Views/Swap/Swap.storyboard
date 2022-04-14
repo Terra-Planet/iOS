@@ -167,6 +167,7 @@
                         <outlet property="fromCoinName" destination="2uo-YV-OBk" id="JSB-0G-3Ii"/>
                         <outlet property="fromLogo" destination="MXS-a3-eCE" id="gaS-ci-60s"/>
                         <outlet property="fromView" destination="NlL-wg-I4L" id="Cjs-i0-bpN"/>
+                        <outlet property="swapButton" destination="RZo-O9-93B" id="oOn-A9-DxB"/>
                         <outlet property="toAmount" destination="IJ6-I5-XNK" id="hhU-df-sfR"/>
                         <outlet property="toCoinName" destination="GoL-3M-wg0" id="a5V-Kh-zcx"/>
                         <outlet property="toLogo" destination="KgM-cA-aTk" id="o4N-dz-OeB"/>

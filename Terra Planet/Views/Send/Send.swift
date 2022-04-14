@@ -42,15 +42,15 @@ extension SendVC {
         self.amount.text = "0"
     }
         
-    func sendCoinPreview(coin: String, amount: String, address: String, memo: String?, callback: @escaping (_ preview: PreviewTX?) -> Void) {
-        API.shared.sendPreview(token: coin, amount: amount, address: address, memo: memo) { status in
-            callback(status)
+    func sendCoinPreview(coin: String, amount: String, address: String, memo: String?, callback: @escaping (_ preview: PreviewTX?,_ errorMessage: String?) -> Void) {
+        API.shared.sendPreview(token: coin, amount: amount, address: address, memo: memo) { preview, error in
+            callback(preview, error)
         }
     }
     
-    func sendCoin(coin: String, amount: String, address: String, memo: String?, callback: @escaping (_ status: Bool) -> Void) {
-        API.shared.send(token: coin, amount: amount, address: address, memo: memo) { status in
-            callback(status)
+    func sendCoin(coin: String, amount: String, address: String, memo: String?, callback: @escaping (_ errorMessage: String?) -> Void) {
+        API.shared.send(token: coin, amount: amount, address: address, memo: memo) { error in
+            callback(error)
         }
     }
 }

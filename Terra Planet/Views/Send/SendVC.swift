@@ -17,6 +17,7 @@ class SendVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var coinBalance: UILabel!
     @IBOutlet weak var memo: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
     var coin = "uluna"
     var balance: Double = 0
@@ -29,9 +30,22 @@ class SendVC: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField != amount {
+            return
+        }
         if var text = textField.text {
             text = text.replacingOccurrences(of: ",", with: ".")
             textField.text = text
+        }
+        if let wallet = API.shared.wallet {
+            if let balance = wallet.coins[coin]?.amount, let amount = amount.text, let wantSend = Double(amount), wantSend > balance {
+                textField.textColor = .red
+                sendButton.isEnabled = false
+            }
+            else {
+                textField.textColor = .label
+                sendButton.isEnabled = true
+            }
         }
     }
     
@@ -67,14 +81,23 @@ class SendVC: UIViewController, UITextFieldDelegate {
     private func sendPreview() {
         if let amount = amount.text, let address = address.text {
             present(loading, animated: true)
-            sendCoinPreview(coin: coin, amount: amount, address: address, memo: memo.text) { preview in
+            sendCoinPreview(coin: coin, amount: amount, address: address, memo: memo.text) { preview, error in
                 self.loading.dismiss(animated: true) {
                     if let preview = preview {
                         self.showPreview(preview: preview)
                     }
+                    else if let err = error {
+                        self.showError(message: err)
+                    }
                 }
             }
         }
+    }
+    
+    private func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
     }
     
     private func showPreview(preview: PreviewTX) {
@@ -117,10 +140,15 @@ class SendVC: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "SEND", message: alertText, preferredStyle: .alert)
         let yes = UIAlertAction(title: "Sign it!", style: .default) { _ in
             self.present(self.loading, animated: true)
-            self.sendCoin(coin: self.coin, amount: self.amount.text!, address: self.address.text!, memo: self.memo.text) { status in
-                Utils.shared.events.trigger("reloadBalance")
+            self.sendCoin(coin: self.coin, amount: self.amount.text!, address: self.address.text!, memo: self.memo.text) { error in
                 self.loading.dismiss(animated: true)
-                self.dismiss(animated: true)
+                if let err = error {
+                    self.showError(message: err)
+                }
+                else {
+                    Utils.shared.events.trigger("reloadBalance")
+                    self.dismiss(animated: true)
+                }
             }
         }
         alert.addAction(yes)

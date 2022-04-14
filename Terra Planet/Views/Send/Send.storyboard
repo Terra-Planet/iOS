@@ -250,6 +250,7 @@
                         <outlet property="coinName" destination="DTI-mY-BZ8" id="I01-Ed-7Mv"/>
                         <outlet property="coinView" destination="5b9-9i-4tM" id="yWC-PL-RLb"/>
                         <outlet property="memo" destination="61O-Uo-apF" id="pC5-GT-rNg"/>
+                        <outlet property="sendButton" destination="PbB-V8-a4V" id="TIY-xL-z3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

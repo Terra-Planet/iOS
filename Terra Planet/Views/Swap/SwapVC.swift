@@ -18,6 +18,7 @@ class SwapVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var toCoinName: UILabel!
     @IBOutlet weak var fromAmount: UITextField!
     @IBOutlet weak var toAmount: UITextField!
+    @IBOutlet weak var swapButton: UIButton!
     
     var from = "uluna"
     var to = "uusd"
@@ -36,6 +37,16 @@ class SwapVC: UIViewController, UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         calculateLiveSwap(textField: textField)
+        if let wallet = API.shared.wallet {
+            if let balance = wallet.coins[from]?.amount, let amount = fromAmount.text, let wantSend = Double(amount), wantSend > balance {
+                textField.textColor = .red
+                swapButton.isEnabled = false
+            }
+            else {
+                textField.textColor = .label
+                swapButton.isEnabled = true
+            }
+        }
     }
     
     @IBAction func switchCoins(_ sender: UIButton) {
@@ -48,10 +59,13 @@ class SwapVC: UIViewController, UITextFieldDelegate {
     
     private func swapPreview() {
         present(self.loading, animated: true)
-        swapPreview { preview in
+        swapPreview { preview, errorMessage in
             self.loading.dismiss(animated: true) {
                 if let preview = preview {
                     self.showPreview(preview: preview)
+                }
+                else if let errorMessage = errorMessage {
+                    self.showError(message: errorMessage)
                 }
             }
         }
@@ -96,14 +110,25 @@ class SwapVC: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "SWAP", message: alertText, preferredStyle: .alert)
         let yes = UIAlertAction(title: "Sign it!", style: .default) { _ in
             self.present(self.loading, animated: true)
-            self.swap { status in
-                Utils.shared.events.trigger("reloadBalance")
+            self.swap { error in
                 self.loading.dismiss(animated: true)
-                self.dismiss(animated: true)
+                if let err = error {
+                    self.showError(message: err)
+                }
+                else {
+                    Utils.shared.events.trigger("reloadBalance")
+                    self.dismiss(animated: true)
+                }
             }
         }
         alert.addAction(yes)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    private func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true)
     }
     
