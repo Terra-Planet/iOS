@@ -70,4 +70,17 @@ final class StoreManager {
         getBalance()
         callback(getPreferredGasFeeCoin())
     }
+    
+    func setNetwork(network: String) {
+        UserDefaults.standard.setValue(network, forKey: "network")
+    }
+    
+    func getNetwork() {
+        if let value = UserDefaults.standard.value(forKey: "network") as? String {
+            API.shared.net = value
+        }
+        else {
+            API.shared.net = "test"
+        }
+    }
 }

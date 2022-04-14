@@ -36,6 +36,7 @@ extension FirstVC {
         StoreManager.shared.loadUserData { preferredGasFeeCoin in
             API.shared.gasFee = preferredGasFeeCoin
         }
+        StoreManager.shared.getNetwork()
     }
     
 }

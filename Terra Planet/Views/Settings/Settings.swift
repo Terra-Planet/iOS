@@ -20,6 +20,7 @@ extension SettingsVC {
     }
     
     func deleteAccount() -> Bool {
+        API.shared.wallet = nil
         return KeyChainManager.shared.deleteWallet()
     }
     

@@ -48,8 +48,10 @@ class AnchorVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func setMax(_ sender: UIButton) {
-        amount.text = "\(accountBalance)"
-        amount.resignFirstResponder()
+        if accountBalance > 2 {
+            amount.text = "\(accountBalance - 2)"
+            amount.resignFirstResponder()
+        }
     }
     
     @IBAction func action(_ sender: UIButton) {

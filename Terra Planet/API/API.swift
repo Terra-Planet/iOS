@@ -13,7 +13,7 @@ final class API {
     static let shared = API()
     
     var wallet: Wallet?
-    let net = "testnet"
+    var net = "test"
     var gasFee: FeeCoin = .ust
     
     var lunaPrice: Double = 0
@@ -33,10 +33,15 @@ final class API {
         }
     }
     
+    func changeNetwork(network: String) {
+        net = network
+        StoreManager.shared.setNetwork(network: network)
+    }
+    
     //MARK: Wallet
     func createWallet(callback: @escaping (_ status: Bool) -> Void) {
         if wallet == nil {
-            Network.shared.get("\(local)wallet/create") { response in
+            Network.shared.get("\(local)wallet/create/\(net)") { response in
                 if response.status == 200 {
                     self.wallet = Wallet(address: response.data["acc_address"].stringValue, mnemonic: response.data["mnemonic"].stringValue, coins: [:])
                     KeyChainManager.shared.saveWallet(wallet: self.wallet!)
@@ -88,7 +93,7 @@ final class API {
                 var anchor = false
                 
                 //MARK: Get Terra Balance
-                Network.shared.get("\(local)wallet/balance/\(wallet.address)") { response in
+                Network.shared.get("\(local)wallet/balance/\(wallet.address)/\(net)") { response in
                     if response.status == 200 {
                         let native = JSON(parseJSON: response.data["native"][0].stringValue)
                         for coin in native.arrayValue {
@@ -107,7 +112,7 @@ final class API {
                 }
                 
                 //MARK: Get Anchor Balance
-                Network.shared.post("\(local)anchor/balance", data: ["mnemonic":wallet.mnemonic]) { response in
+                Network.shared.post("\(local)anchor/balance", data: ["mnemonic":wallet.mnemonic,"network":net]) { response in
                     if response.status == 200 {
                         let balance = Balance(coin: "anchor", amount: response.data["total_deposit_balance_in_ust"].doubleValue)
                         StoreManager.shared.setBalance(coin: balance)
@@ -141,7 +146,8 @@ final class API {
                 "token" : token,
                 "amount" : amount,
                 "dst_addr" : address,
-                "mnemonic" : wallet.mnemonic
+                "mnemonic" : wallet.mnemonic,
+                "network":net
             ]
             if let memo = memo, memo != "" {
                 payload["memo"] = memo
@@ -172,7 +178,8 @@ final class API {
                         "token" : token,
                         "amount" : amount,
                         "dst_addr" : address,
-                        "mnemonic" : wallet.mnemonic
+                        "mnemonic" : wallet.mnemonic,
+                        "network":self.net
                     ]
                     if let memo = memo, memo != "" {
                         payload["memo"] = memo
@@ -211,7 +218,8 @@ final class API {
                 "src" : from,
                 "amount" : amount,
                 "dst" : to,
-                "mnemonic" : wallet.mnemonic
+                "mnemonic" : wallet.mnemonic,
+                "network":net
             ]
             Network.shared.post("\(self.local)wallet/swap/preview", data: payload) { response in
                 if response.status == 200 {
@@ -239,7 +247,8 @@ final class API {
                         "src" : from,
                         "amount" : amount,
                         "dst" : to,
-                        "mnemonic" : wallet.mnemonic
+                        "mnemonic" : wallet.mnemonic,
+                        "network":self.net
                     ]
                     Network.shared.post("\(self.local)wallet/swap", data: payload) { response in
                         if response.status == 200 {
@@ -276,7 +285,8 @@ final class API {
                     let payload: [String:Any] = [
                         "token" : "uusd",
                         "amount" : amount,
-                        "mnemonic" : wallet.mnemonic
+                        "mnemonic" : wallet.mnemonic,
+                        "network":self.net
                     ]
                     Network.shared.post("\(self.local)anchor/deposit", data: payload) { response in
                         if response.status == 200 {
@@ -304,7 +314,8 @@ final class API {
                     let payload: [String:Any] = [
                         "token" : "uusd",
                         "amount" : amount,
-                        "mnemonic" : wallet.mnemonic
+                        "mnemonic" : wallet.mnemonic,
+                        "network":self.net
                     ]
                     Network.shared.post("\(self.local)anchor/withdraw", data: payload) { response in
                         if response.status == 200 {
@@ -328,7 +339,7 @@ final class API {
     //MARK: Rates
     func apy(callback: @escaping (_ apy: Double) -> Void) {
         if let wallet = wallet {
-            Network.shared.post("\(local)anchor/market", data: ["mnemonic":wallet.mnemonic]) { response in
+            Network.shared.post("\(local)anchor/market", data: ["mnemonic":wallet.mnemonic,"network":net]) { response in
                 if response.status == 200 {
                     callback(response.data["APY"].doubleValue)
                 }

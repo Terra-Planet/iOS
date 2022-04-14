@@ -19,6 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9LT-Rg-0rJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="0.0"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TESTNET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5A-EH-XfC">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstItem="r5A-EH-XfC" firstAttribute="leading" secondItem="9LT-Rg-0rJ" secondAttribute="leading" id="mz8-vT-KNH"/>
+                                    <constraint firstItem="r5A-EH-XfC" firstAttribute="top" secondItem="9LT-Rg-0rJ" secondAttribute="top" id="qLN-vN-L8N"/>
+                                    <constraint firstAttribute="bottom" secondItem="r5A-EH-XfC" secondAttribute="bottom" id="rgj-DP-TVl"/>
+                                    <constraint firstAttribute="height" id="txw-pd-3BI"/>
+                                    <constraint firstAttribute="trailing" secondItem="r5A-EH-XfC" secondAttribute="trailing" id="yJP-pN-heZ"/>
+                                </constraints>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rqH-tV-P8S">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -390,9 +409,12 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9LT-Rg-0rJ" secondAttribute="trailing" id="AZI-om-1fT"/>
+                            <constraint firstItem="9LT-Rg-0rJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JeG-6o-mHx"/>
+                            <constraint firstItem="rqH-tV-P8S" firstAttribute="top" secondItem="9LT-Rg-0rJ" secondAttribute="bottom" id="OSN-A2-fIv"/>
                             <constraint firstAttribute="trailing" secondItem="rqH-tV-P8S" secondAttribute="trailing" id="dkd-Pv-QUS"/>
+                            <constraint firstItem="9LT-Rg-0rJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="etr-yK-XAH"/>
                             <constraint firstItem="rqH-tV-P8S" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="gLC-9a-McW"/>
-                            <constraint firstItem="rqH-tV-P8S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="icF-Uh-bln"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rqH-tV-P8S" secondAttribute="bottom" id="ydu-p3-fe1"/>
                         </constraints>
                     </view>
@@ -406,6 +428,7 @@
                         <outlet property="lunaAmount" destination="gnH-gD-wh3" id="NST-vS-11R"/>
                         <outlet property="lunaValue" destination="FBJ-fS-UPH" id="OoF-Cv-Zit"/>
                         <outlet property="reloadButton" destination="bkh-rh-pbC" id="hH5-Px-txk"/>
+                        <outlet property="testnetHeight" destination="txw-pd-3BI" id="gCM-ZD-blv"/>
                         <outlet property="ustAmount" destination="9qS-VW-2OH" id="NSu-0e-hgd"/>
                         <outlet property="ustValue" destination="Aa3-VD-h29" id="gHZ-2u-k9U"/>
                     </connections>
@@ -431,6 +454,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

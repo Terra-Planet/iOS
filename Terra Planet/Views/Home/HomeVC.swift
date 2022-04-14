@@ -10,6 +10,8 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var testnetHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var reloadButton: UIButton!
     
     @IBOutlet weak var actionsView: UIView!
@@ -34,6 +36,16 @@ class HomeVC: UIViewController {
         Utils.shared.events.listenTo("reloadBalance") { _ in
             self.loadBalance()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if API.shared.net == "test" {
+            testnetHeight.constant = 40
+        }
+        else {
+            testnetHeight.constant = 0
+        }
+        loadBalance()
     }
     
     @IBAction func reload(_ sender: UIButton) {

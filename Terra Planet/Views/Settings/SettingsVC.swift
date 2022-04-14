@@ -12,6 +12,8 @@ class SettingsVC: UIViewController {
     
     @IBOutlet weak var gasView: UIView!
     @IBOutlet weak var gasSelector: UISegmentedControl!
+    @IBOutlet weak var netView: UIView!
+    @IBOutlet weak var networkSelector: UISegmentedControl!
     
     override func viewDidLoad() {
         design()
@@ -28,14 +30,30 @@ class SettingsVC: UIViewController {
         else {
             gasSelector.selectedSegmentIndex = 1
         }
+        if API.shared.net == "test" {
+            networkSelector.selectedSegmentIndex = 0
+        }
+        else {
+            networkSelector.selectedSegmentIndex = 1
+        }
     }
     
     @IBAction func changeGas(_ sender: UISegmentedControl) {
-        var coin: FeeCoin = .ust
-        if gasSelector.selectedSegmentIndex == 1 {
-            coin = .luna
+        if sender == gasSelector {
+            var coin: FeeCoin = .ust
+            if gasSelector.selectedSegmentIndex == 1 {
+                coin = .luna
+            }
+            savePreferredGasFeeCoin(coin: coin)
         }
-        savePreferredGasFeeCoin(coin: coin)
+        else {
+            if sender.selectedSegmentIndex == 0 {
+                API.shared.changeNetwork(network: "test")
+            }
+            else {
+                API.shared.changeNetwork(network: "main")
+            }
+        }
     }
     
     @IBAction func seeSeeds(_ sender: UIButton) {
@@ -70,5 +88,6 @@ class SettingsVC: UIViewController {
     
     private func design() {
         gasView.blueBorderLine()
+        netView.blueBorderLine()
     }
 }
