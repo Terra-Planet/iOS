@@ -18,7 +18,7 @@ final class API {
     
     var lunaPrice: Double = 0
     
-    private let local = "http://127.0.0.1:3000/"
+    private let local = "http://127.0.0.1:4938/"
     private let supportedCoins = ["uluna", "uusd"]
  
     //MARK: Server Status
