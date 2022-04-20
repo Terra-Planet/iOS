@@ -1,5 +1,31 @@
 # iOS
 Open source non-custodial Terra Wallet. We send your finance from the Earth to the Moon
 
-To run this project first clone the [Backend](https://github.com/Terra-Planet/backend) project and put the content into the `nodejs-project` folder and run `npm install`. Also, you have to install the Pods, so be sure to have CocoaPods and run `pod install`.
-I promise to add the backend as a git sub-module in the future.
+## Running the project
+
+To run this project update / fetch the backend submodule
+
+### Git clone with submodules
+
+```sh
+git clone --recurse-submodules git@github.com:Terra-Planet/iOS.git
+```
+
+
+### Updating modules later
+```sh
+git submodule update --init --recursive
+```
+
+## Install dependencies
+
+### Install iOS dependencies
+```sh
+pod install
+```
+
+### Install backend dependencies
+```sh
+cd Terra\ Planet/nodejs-project 
+npm i
+```
