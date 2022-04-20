@@ -37,4 +37,9 @@ class ImportWalletVC: UIViewController, UITextViewDelegate {
             }
         }
     }
+    
+    @IBAction func cancel(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
