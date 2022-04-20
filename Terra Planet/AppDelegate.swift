@@ -13,8 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    let httpUsername = UUID().uuidString
+    let httpPassword = UUID().uuidString
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NodeRunner.runNode()
+        Network.shared.setCredentials(httpUsername, httpPassword)
+        NodeRunner.runNode(httpUsername, withPassword: httpPassword)
         return true
     }
     
@@ -32,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         API.shared.status { status in
             if !status {
-                NodeRunner.runNode()
+                NodeRunner.runNode(self.httpUsername, withPassword: self.httpPassword)
             }
         }
         KeyChainManager.shared.loadWallet { status in

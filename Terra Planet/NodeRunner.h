@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NodeRunner : NSObject {}
-+ (void) runNode;
++ (void) runNode:(NSString*) httpUsername withPassword:(NSString*) httpPassword;
 @end
 
 #endif

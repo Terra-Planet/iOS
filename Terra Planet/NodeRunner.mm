@@ -13,10 +13,13 @@
 @implementation NodeRunner
 
 //node's libUV requires all arguments being on contiguous memory.
-+ (void) startEngine
++ (void) startEngine:(NSDictionary*) params
 {
+    NSString* httpUsername = [params objectForKey:@"httpUsername"];
+    NSString* httpPassword = [params objectForKey:@"httpPassword"];
+    
     NSString* srcPath = [[NSBundle mainBundle] pathForResource:@"nodejs-project/bin/www" ofType:@""];
-    NSArray* arguments = [NSArray arrayWithObjects: @"node",srcPath,nil];
+    NSArray* arguments = [NSArray arrayWithObjects: @"node",srcPath, httpUsername, httpPassword, nil];
     int c_arguments_size=0;
     
     //Compute byte size need for all arguments in contiguous memory.
@@ -58,13 +61,19 @@
     node_start(argument_count,argv);
 }
 
-+ (void) runNode
++ (void) runNode:(NSString*) httpUsername withPassword:(NSString*) httpPassword
 {
+    
+    NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            httpUsername, @"httpUsername",
+                            httpPassword, @"httpPassword",
+                            nil];
+        
     NSThread* nodejsThread = nil;
     nodejsThread = [[NSThread alloc]
         initWithTarget:self
-        selector:@selector(startEngine)
-        object:nil
+        selector:@selector(startEngine:)
+        object:params
     ];
     // Set 2MB of stack space for the Node.js thread.
     [nodejsThread setStackSize:2*1024*1024];

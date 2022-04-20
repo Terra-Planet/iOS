@@ -12,16 +12,27 @@ import SwiftyJSON
 final class Network {
     static let shared = Network()
     
+    private(set) var credentials: String?
+    
+    func setCredentials(_ username: String, _ password: String) {
+        let credentialData = "\(username):\(password)".data(using: String.Encoding.utf8)!
+        credentials = credentialData.base64EncodedString(options: [])
+    }
+    
     func get(_ url: String, callback: @escaping (_ response: NetworkResponse) -> Void) {
         print("📡 GET: \(url)")
-        Alamofire.request(url, method: .get).responseJSON { response in
+        
+        let headers = credentials != nil ? ["Authorization": "Basic \(credentials!)"] : [:]
+        Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
             callback(self.parseResponse(response: response))
         }
     }
     
     func post(_ url: String, data: Parameters, callback: @escaping (_ response: NetworkResponse) -> Void) {
         print("📡 POST: \(url)")
-        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default).responseJSON { response in
+        
+        let headers = credentials != nil ? ["Authorization": "Basic \(credentials!)"] : [:]
+        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             callback(self.parseResponse(response: response))
         }
     }
