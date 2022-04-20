@@ -32,42 +32,7 @@ final class StoreManager {
         return .ust
     }
     
-    func setLastLunaPrice(value: Double) {
-        UserDefaults.standard.setValue(value, forKey: "lunaPrice")
-    }
-    
-    private func getLunaPrice() -> Double {
-        if let value = UserDefaults.standard.value(forKey: "lunaPrice") as? Double {
-            return value
-        }
-        else {
-            return 0
-        }
-    }
-    
-    func setBalance(coin: Balance) {
-        UserDefaults.standard.setValue(coin.amount, forKey: "balance_\(coin.coin)")
-    }
-    
-    func deleteBalance() {
-        for coin in availableCoins {
-            UserDefaults.standard.setValue(nil, forKey: "balance_\(coin)")
-        }
-    }
-    
-    private func getBalance() {
-        if var _ = API.shared.wallet {
-            API.shared.lunaPrice = getLunaPrice()
-            for coin in availableCoins {
-                if let stored = UserDefaults.standard.value(forKey: "balance_\(coin)") as? Double {
-                    API.shared.wallet?.coins[coin] = Balance(coin: coin, amount: stored)
-                }
-            }
-        }
-    }
-    
     func loadUserData(callback: @escaping (_ preferredGasFeeCoin: FeeCoin) -> Void) {
-        getBalance()
         callback(getPreferredGasFeeCoin())
     }
     

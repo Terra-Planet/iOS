@@ -82,12 +82,8 @@ final class API {
     }
     
     func loadCoins(callback: @escaping (_ status: Bool) -> Void) {
-        callback(false)
         if let wallet = wallet {
-            
             self.wallet?.coins = [:]
-            StoreManager.shared.deleteBalance()
-            
             func loadCoins() {
                 var terra = false
                 var anchor = false
@@ -100,7 +96,6 @@ final class API {
                             if self.supportedCoins.contains(coin["denom"].stringValue) {
                                 let amount = (coin["amount"].doubleValue / 1000000)
                                 let balance = Balance(coin: coin["denom"].stringValue, amount: amount)
-                                StoreManager.shared.setBalance(coin: balance)
                                 self.wallet?.coins[coin["denom"].stringValue] = balance
                             }
                         }
@@ -115,7 +110,6 @@ final class API {
                 Network.shared.post("\(local)anchor/balance", data: ["mnemonic":wallet.mnemonic,"network":net]) { response in
                     if response.status == 200 {
                         let balance = Balance(coin: "anchor", amount: response.data["total_deposit_balance_in_ust"].doubleValue)
-                        StoreManager.shared.setBalance(coin: balance)
                         self.wallet?.coins["anchor"] = balance
                         anchor = true
                         if terra {
@@ -357,7 +351,6 @@ final class API {
         Network.shared.get("\(local)market/rate/uluna/uusd") { response in
             if response.status == 200 {
                 self.lunaPrice = response.data["amount"].doubleValue
-                StoreManager.shared.setLastLunaPrice(value: self.lunaPrice)
                 callback(true)
             }
             else {
