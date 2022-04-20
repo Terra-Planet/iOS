@@ -11,6 +11,9 @@ import Alamofire
 
 final class API {
     static let shared = API()
+    static let host = "localhost"
+    static let port = "4938"
+    
     
     var wallet: Wallet?
     var net = "test"
@@ -18,7 +21,7 @@ final class API {
     
     var lunaPrice: Double = 0
     
-    private let local = "http://127.0.0.1:4938/"
+    private let local = "https://\(host):\(port)/"
     private let supportedCoins = ["uluna", "uusd"]
  
     //MARK: Server Status

@@ -14,6 +14,24 @@ final class Network {
     
     private(set) var credentials: String?
     
+    let defaultManager: Alamofire.SessionManager = {
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            API.host: .disableEvaluation,
+        ]
+
+        let configuration = URLSessionConfiguration.default
+        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+
+        
+        
+        let m = Alamofire.SessionManager(
+            configuration: configuration,
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
+        
+        return m
+    }()
+    
     func setCredentials(_ username: String, _ password: String) {
         let credentialData = "\(username):\(password)".data(using: String.Encoding.utf8)!
         credentials = credentialData.base64EncodedString(options: [])
@@ -23,7 +41,7 @@ final class Network {
         print("📡 GET: \(url)")
         
         let headers = credentials != nil ? ["Authorization": "Basic \(credentials!)"] : [:]
-        Alamofire.request(url, method: .get, headers: headers).responseJSON { response in
+        defaultManager.request(url, method: .get, headers: headers).responseJSON { response in
             callback(self.parseResponse(response: response))
         }
     }
@@ -32,7 +50,7 @@ final class Network {
         print("📡 POST: \(url)")
         
         let headers = credentials != nil ? ["Authorization": "Basic \(credentials!)"] : [:]
-        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+        defaultManager.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             callback(self.parseResponse(response: response))
         }
     }
