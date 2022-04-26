@@ -59,6 +59,7 @@
     
     //Start node, with argc and argv.
     node_start(argument_count,argv);
+    free(args_buffer);
 }
 
 + (void) runNode:(NSString*) httpUsername withPassword:(NSString*) httpPassword
@@ -69,12 +70,22 @@
                             httpPassword, @"httpPassword",
                             nil];
         
-    NSThread* nodejsThread = nil;
-    nodejsThread = [[NSThread alloc]
-        initWithTarget:self
-        selector:@selector(startEngine:)
-        object:params
-    ];
+    NSThread* nodejsThread = [[NSThread alloc] initWithBlock:^{
+        try {
+            [NodeRunner startEngine:params];
+        } catch (NSException* ignored) {
+            NSLog(@"Exception %@", ignored);
+        }
+        [NSThread exit];
+    }];
+    
+    // Give this thread a Shield...sorry, a Name! Ref: https://tenor.com/bxn6i.gif
+    [nodejsThread setName:@"NodeJSThread"];
+    
+    // https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/PrioritizeWorkWithQoS.html
+    [nodejsThread setQualityOfService:NSQualityOfServiceBackground];
+    [nodejsThread setThreadPriority:1];
+    
     // Set 2MB of stack space for the Node.js thread.
     [nodejsThread setStackSize:2*1024*1024];
     [nodejsThread start];
