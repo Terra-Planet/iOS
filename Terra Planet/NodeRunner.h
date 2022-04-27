@@ -12,6 +12,8 @@
 
 @interface NodeRunner : NSObject {}
 + (void) runNode:(NSString*) httpUsername withPassword:(NSString*) httpPassword;
++ (void) stopHttpServer;
++ (void) startHttpServer;
 @end
 
 #endif

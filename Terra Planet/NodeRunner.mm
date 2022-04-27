@@ -12,14 +12,34 @@
 
 @implementation NodeRunner
 
+NSFileHandle *pipeControlWriteHandle;
+NSFileHandle *pipeControlReadHandle;
+NSPipe *controlPipe;
+
++ (void) createControlPipe
+{
+  controlPipe = [NSPipe pipe] ;
+  pipeControlReadHandle = [controlPipe fileHandleForReading];
+  pipeControlWriteHandle = [controlPipe fileHandleForWriting];
+}
+
+
 //node's libUV requires all arguments being on contiguous memory.
 + (void) startEngine:(NSDictionary*) params
 {
     NSString* httpUsername = [params objectForKey:@"httpUsername"];
     NSString* httpPassword = [params objectForKey:@"httpPassword"];
     
+    NSString* controlFileDescriptorNS = [NSString stringWithFormat:@"%d",[pipeControlReadHandle fileDescriptor]];
+    
     NSString* srcPath = [[NSBundle mainBundle] pathForResource:@"nodejs-project/bin/www" ofType:@""];
-    NSArray* arguments = [NSArray arrayWithObjects: @"node",srcPath, httpUsername, httpPassword, nil];
+    NSArray* arguments = [NSArray arrayWithObjects: @"node",
+                          srcPath,
+                          [NSString stringWithFormat:@"--user=%@",httpUsername],
+                          [NSString stringWithFormat:@"--password=%@",httpPassword],
+                          [NSString stringWithFormat:@"--controlfh=%@",controlFileDescriptorNS],
+                          nil];
+    
     int c_arguments_size=0;
     
     //Compute byte size need for all arguments in contiguous memory.
@@ -59,27 +79,48 @@
     
     //Start node, with argc and argv.
     node_start(argument_count,argv);
+    free(args_buffer);
+}
+
++(void) sendControlMessage:(NSString*)message
+{
+  [pipeControlWriteHandle writeData:[[NSString stringWithFormat: @"%@\n", message] dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
++ (void) stopHttpServer {
+    [self sendControlMessage:@"STOP"];
+}
+
++ (void) startHttpServer {
+    [self sendControlMessage:@"START"];
 }
 
 + (void) runNode:(NSString*) httpUsername withPassword:(NSString*) httpPassword
 {
+    
+    [self createControlPipe];
+    
     
     NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
                             httpUsername, @"httpUsername",
                             httpPassword, @"httpPassword",
                             nil];
         
-    NSThread* nodejsThread = nil;
-    nodejsThread = [[NSThread alloc]
-        initWithTarget:self
-        selector:@selector(startEngine:)
-        object:params
-    ];
-    // Set 2MB of stack space for the Node.js thread.
-    [nodejsThread setStackSize:2*1024*1024];
-    [nodejsThread start];
+    //Spawns the engine in a background thread.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        // Give this thread a Shield...sorry, a Name! Ref: https://tenor.com/bxn6i.gif
+        [[NSThread currentThread] setName:@"NodeJSThread"];
+        [[NSThread currentThread] setThreadPriority:1];
+        
+        dispatch_time_t when = dispatch_time(DISPATCH_WALLTIME_NOW, 2.0 * NSEC_PER_SEC);
+        dispatch_queue_t startQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_after(when, startQueue, ^{
+            [NodeRunner startHttpServer];
+        });
+                
+        [NodeRunner startEngine:params];
+    });
 }
-
 
 @end
 

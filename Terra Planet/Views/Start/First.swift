@@ -12,12 +12,19 @@ extension FirstVC {
     
     private func waitServer(callback: @escaping () -> Void) {
         func ask() {
-            API.shared.status { status in
-                if status {
-                    callback()
-                }
-                else {
-                    ask()
+            let queue = DispatchQueue(label: "waitServer", qos: .default)
+            queue.async {
+                Thread.current.name = queue.label
+                API.shared.status { status in
+                    if status {
+                        callback()
+                        return
+                    }
+                    
+                    let seconds = 1.0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                        ask()
+                    }
                 }
             }
         }
