@@ -8,21 +8,39 @@
 import Foundation
 import UIKit
 import WebKit
+import WKWebView_WarmUp
 
 class HistoryVC: UIViewController {
     
-    let webView = WKWebView()
+    private lazy var webView: WKWebView = {
+        let webView: WKWebView!
+        
+        if let url = API.shared.createWalletHistoryURL() {
+            webView = WKWebViewHeater.shared.dequeue(with: url)
+        } else {
+            webView = WKWebViewHeater.shared.dequeue()
+        }
+        
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.scrollView.alwaysBounceHorizontal = false
+        webView.scrollView.alwaysBounceVertical = false
+        return webView
+    }()
     
     override func viewDidLoad() {
-        view = webView
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if let wallet = API.shared.wallet {
-            let url = URL(string: "https://finder.terra.money/\(API.shared.net)net/address/\(wallet.address)")
-            let request = URLRequest(url: url!)
-            webView.load(request)
-        }
+        super.viewDidLoad()
+
+        // Add the WebView
+        view.addSubview(webView)
+
+        // User AutoLayout to set its constraints
+        let webViewConstraints = [
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            webView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ]
+        NSLayoutConstraint.activate(webViewConstraints)
     }
 }
 
