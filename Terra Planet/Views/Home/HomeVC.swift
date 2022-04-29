@@ -35,6 +35,7 @@ class HomeVC: UIViewController {
         loadAPY()
         Utils.shared.events.listenTo("reloadBalance") { _ in
             self.loadBalance()
+            self.loadAPY()
         }
     }
     
@@ -46,6 +47,7 @@ class HomeVC: UIViewController {
             testnetHeight.constant = 0
         }
         loadBalance()
+        loadAPY()
     }
     
     @IBAction func reload(_ sender: UIButton) {
