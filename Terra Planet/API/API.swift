@@ -8,6 +8,7 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import WKWebView_WarmUp
 
 final class API {
     static let shared = API()
@@ -15,7 +16,15 @@ final class API {
     static let port = "4938"
     
     
-    var wallet: Wallet?
+    var wallet: Wallet? {
+        didSet {
+            if let url = createWalletHistoryURL() {
+                DispatchQueue.main.async {
+                    WKWebViewHeater.shared.warmUp(with: url)
+                }
+            }
+        }
+    }
     var net = "test"
     var gasFee: FeeCoin = .ust
     
@@ -374,5 +383,13 @@ final class API {
     func savePreferredGasFeeCoin(coin: FeeCoin) {
         API.shared.gasFee = coin
         StoreManager.shared.setPreferredGasFeeCoin(coin: coin)
+    }
+    
+    func createWalletHistoryURL() -> URL? {
+        if let wallet = wallet {
+            let url = URL(string: "https://finder.terra.money/\(net)net/address/\(wallet.address)")
+            return url
+        }
+        return nil
     }
 }

@@ -8,6 +8,7 @@ target 'Terra Planet' do
   # Pods for Terra Planet
   pod 'SwiftyJSON', '~> 4.2.0'
   pod 'Alamofire', '~> 4.0'
+  pod 'WKWebView_WarmUp', '~> 1.0'
 
   target 'Terra PlanetTests' do
     inherit! :search_paths
