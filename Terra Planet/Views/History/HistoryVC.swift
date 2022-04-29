@@ -42,5 +42,17 @@ class HistoryVC: UIViewController {
         ]
         NSLayoutConstraint.activate(webViewConstraints)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !webView.isLoading, let url = API.shared.createWalletHistoryURL() {
+            if let webViewURL = webView.url, webViewURL != url {
+                webView.load(URLRequest(url: url))
+            } else  {
+                webView.reload()
+            }
+        }
+    }
 }
 
