@@ -13,6 +13,7 @@ extension ReceiveVC {
     func createQR() {
         if let wallet = API.shared.wallet {
             qr.image = QR.generateQRCode(from: wallet.address)
+            addressLabel.text = wallet.address
         }
     }
     

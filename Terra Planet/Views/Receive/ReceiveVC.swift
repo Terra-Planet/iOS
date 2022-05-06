@@ -12,6 +12,7 @@ class ReceiveVC: UIViewController {
     
     @IBOutlet weak var copiedLabel: UILabel!
     @IBOutlet weak var qr: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
     
     override func viewDidLoad() {
         createQR()

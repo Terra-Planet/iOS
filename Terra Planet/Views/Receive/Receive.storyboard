@@ -80,6 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="L9c-YQ-98Z" id="1pM-B6-3lf"/>
                         <outlet property="copiedLabel" destination="q8d-Eg-MXS" id="FLK-mi-xpO"/>
                         <outlet property="qr" destination="esd-yL-IM3" id="UqL-na-jOO"/>
                     </connections>
