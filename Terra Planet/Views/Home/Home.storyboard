@@ -72,7 +72,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgd-Jy-kfv">
                                                                 <rect key="frame" x="50" y="0.0" width="44" height="50"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="44" id="S5m-Xj-HDw"/>
+                                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="S5m-Xj-HDw"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -426,6 +426,7 @@
                         <outlet property="balance" destination="3ZH-uc-Ie3" id="MVu-UL-lLQ"/>
                         <outlet property="earnView" destination="iXa-oQ-PH0" id="umc-CH-ug1"/>
                         <outlet property="lunaAmount" destination="gnH-gD-wh3" id="NST-vS-11R"/>
+                        <outlet property="lunaPriceLabel" destination="Bgd-Jy-kfv" id="zHh-gQ-5fS"/>
                         <outlet property="lunaValue" destination="FBJ-fS-UPH" id="OoF-Cv-Zit"/>
                         <outlet property="reloadButton" destination="bkh-rh-pbC" id="hH5-Px-txk"/>
                         <outlet property="testnetHeight" destination="txw-pd-3BI" id="gCM-ZD-blv"/>

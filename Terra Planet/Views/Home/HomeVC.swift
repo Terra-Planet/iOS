@@ -19,6 +19,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var balance: UILabel!
     
+    @IBOutlet weak var lunaPriceLabel: UILabel!
     @IBOutlet weak var lunaAmount: UILabel!
     @IBOutlet weak var lunaValue: UILabel!
     
@@ -67,6 +68,7 @@ class HomeVC: UIViewController {
     
     @IBAction func send(_ sender: UIButton) {
         let vc = UIStoryboard(name: "Send", bundle: nil).instantiateViewController(withIdentifier: "SendVC")
+//        let vc = UIStoryboard(name: "Send", bundle: nil).instantiateViewController(withIdentifier: "SendNav")
         self.present(vc, animated: true)
     }
     

@@ -18,6 +18,7 @@ extension HomeVC {
                 }
                 if let wallet = API.shared.wallet {
                     self.balance.text = "$\(wallet.balance().double2String())"
+                    self.lunaPriceLabel.text = "LUNA($\(Int(API.shared.lunaPrice))):"
                     self.lunaAmount.text = "0"
                     self.lunaValue.text = "$0"
                     self.ustAmount.text = "0"
